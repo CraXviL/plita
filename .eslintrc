@@ -1,0 +1,21 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "window" : true,
+        "document" : true,
+        "$" : true,
+        "console" : true
+    },
+    "plugins": [
+    ],
+    "rules": {
+        "no-console": "off"
+    }
+}
