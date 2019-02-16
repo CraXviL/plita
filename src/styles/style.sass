@@ -24,14 +24,47 @@ body
 	&.img-width
 		width: 100%
 
-.text-center
-	text-align: center
-
 b, strong
 	font-weight: bold
 
+a
+	color: $text
+	&:hover
+		color: $text
+		text-decoration: none
+
+p
+	margin: 0
+
+ul
+	margin: 0
+	padding: 0
+	li
+		list-style-type: none
+
+h2
+	font-family: "Bebas Neue"
+	font-size: 55px
+	font-weight: bold
+	color: $accent
+	letter-spacing: 6px
+	text-transform: uppercase
+
+h3
+	margin: 0
+
+img
+	margin: -1px
+
+.block
+	max-width: $max-width
+	margin: 0 auto
+
+.space
+	height: 20px
+
 #header-carousel
-	height: 900px
+	max-height: 900px
 	.carousel-indicators
 		bottom: 60px
 		margin-left: 22%
@@ -43,10 +76,10 @@ b, strong
 	.carousel-control-next, .carousel-control-prev
 		width: 30%
 		top: 760px
-	span.carousel-control-prev-icon
+	.carousel-control-prev-icon
 		width: 100px
 		background-image: url('../img/main/arrow-left.png')
-	span.carousel-control-next-icon
+	.carousel-control-next-icon
 		width: 100px
 		background-image: url('../img/main/arrow-right.png')
 
@@ -59,16 +92,12 @@ header
 	ul.navbar-nav
 		margin: 0 30px 5px 30px
 	li.nav-item
-		border-bottom: 1px solid $text
+		border-bottom: $thin-border
 		&:hover
-			border-bottom: 3px solid $text
+			border-bottom: $thick-border
 		a.nav-link
-			color: $text
 			font-size: 17px
-			font-weight: 300
 			letter-spacing: 5px
-			&:hover
-				color: $text
 	button.btn-order
 		width: 240px
 		height: 40px
@@ -77,11 +106,11 @@ header
 		font-family: "Bebas Neue"
 		letter-spacing: 5px
 		border-radius: 4px
-		border: 1px solid #ffffff
+		border: $thin-border
 		&:hover
 			color: $text
 			font-weight: bold
-			border: 3px solid #ffffff
+			border: $thick-border
 
 .description
 	bottom: 140px
@@ -101,7 +130,7 @@ header
 			letter-spacing: 2px
 			font-family: $default-font
 
-#block-about
+.block-about
 	color: $accent
 	.wrapper
 		height: 800px
@@ -110,10 +139,6 @@ header
 			width: 350px
 			margin: 120px 0 0 0
 			padding: 45px 0 27px
-			font-family: "Bebas Neue"
-			font-size: 55px
-			font-weight: 700
-			letter-spacing: 6px
 			border-bottom: 3px solid $accent
 		.block-about-text
 			margin: 45px 0
@@ -122,3 +147,76 @@ header
 			line-height: 25px
 			letter-spacing: 2px
 			overflow: hidden
+
+.block-menu
+	margin: 120px auto
+	background-color: $accent
+	.menu-list
+		height: 120px
+	.menu-item
+		font-family: "Bebas Neue"
+		font-size: 30px
+		font-weight: bold
+		letter-spacing: 5px
+		text-transform: uppercase
+		border-bottom: $thin-border__transparent
+		&:hover
+			border-bottom: $thin-border
+		span
+			font-family: "Bebas Neue Book"
+			font-weight: 300
+
+.block-stock
+	margin-top: 100px
+	.stock-item
+		background-color: $accent
+	img
+		width: 300px
+		height: 300px
+	.stock-item-text
+		width: 265px
+		font-size: 25px
+		letter-spacing: 3px
+		line-height: 30px
+		span
+			font-family: "Bebas Neue"
+			font-weight: 700
+	.stock-item:first-child .stock-item-text, .stock-item:last-child .stock-item-text
+		width: 230px
+
+.block-hashtag
+	h3
+		margin: 90px 0 50px 0
+		color: $accent
+		font-family: "Bebas Neue"
+		font-size: 42px
+		font-weight: bold
+		letter-spacing: 4px
+		text-transform: uppercase
+
+.block-contacts
+	height: 900px
+	background: url('../img/main/block-contacts.jpg') no-repeat right
+	h2
+		width: 350px
+		margin: 115px 0 0 0
+		padding-top: 105px
+		color: $text
+	.block-about-text
+		width: 450px
+		margin-top: 55px
+		font-family: "Bebas Neue"
+		font-size: 25px
+		font-weight: bold
+		line-height: 37px
+		letter-spacing: 3px
+		overflow: hidden
+		.space
+			height: 50px
+		.socials-link
+			margin-left: 23px
+
+footer
+	margin-top: 150px
+	font-size: 20px
+	letter-spacing: 2.67px
