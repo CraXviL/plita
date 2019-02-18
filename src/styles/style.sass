@@ -98,19 +98,20 @@ header
 		a.nav-link
 			font-size: 17px
 			letter-spacing: 5px
-	button.btn-order
-		width: 240px
-		height: 40px
-		margin: 0 14px 10px 14px
+
+.btn-order
+	width: 240px
+	height: 40px
+	margin: 0 14px 10px 14px
+	color: $text
+	font-family: "Bebas Neue"
+	letter-spacing: 5px
+	border-radius: 4px
+	border: $thin-border
+	&:hover
 		color: $text
-		font-family: "Bebas Neue"
-		letter-spacing: 5px
-		border-radius: 4px
-		border: $thin-border
-		&:hover
-			color: $text
-			font-weight: bold
-			border: $thick-border
+		font-weight: bold
+		border: $thick-border
 
 .description
 	bottom: 140px
@@ -222,10 +223,37 @@ footer
 	letter-spacing: 2.67px
 
 form
+	top: -600px
+	left: 500px
+	height: 600px
+	width: 500px
+	padding: 20px 50px
+	background-color: $accent
+	z-index: 1000
+	img
+		cursor: pointer
 	h2
+		margin-top: 40px
+		color: $text
 		font-size: 42px
-	input
+	input:not([type="submit"])
 		height: 60px
+		width: 80%
+		padding-top: 20px
+		color: $text
+		text-align: center
+		background-color: $accent
+		border: 0
 		border-bottom: $thin-border
 		font-size: 17px
 		letter-spacing: 2px
+	input[type="submit"]
+		width: 80%
+		margin: 50px 0 25px 0
+	p
+		font-size: 17px
+		letter-spacing: 3px
+		line-height: 24px
+	h3
+		font-size: 30px
+		letter-spacing: 3px
