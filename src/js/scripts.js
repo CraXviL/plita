@@ -1,10 +1,49 @@
 import 'jquery';
 import 'bootstrap';
-import 'bootstrap/scss/bootstrap-grid.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/style.sass';
 
 $(document).ready(function() {
+	
+	var blockHeights = {
+		heightTopPart: 0,
+		heightMiddlePart: 0,
+		heightPortfolioBlock: 0,
+		calcBlockHeight() {
+			this.heightTopPart = parseInt($('header').css('height'), 10) +
+											parseInt($('#main').css('height'), 10);
+			this.heightMiddlePart = parseInt($('#about').css('height'), 10) +
+											parseInt($('#skills').css('height'), 10);
+			this.heightPortfolioBlock = parseInt($('#portfolio').css('height'), 10);
+		}
+	};
+
+	blockHeights.calcBlockHeight();
+
+	$(window).resize(() => blockHeights.calcBlockHeight());
+
+	$('.navbar-nav a').on('click', (e) => {
+		e.preventDefault();
+		switch (e.target.id) {
+			case 'menu-about':
+				$('html').animate({ scrollTop: blockHeights.heightTopPart });
+				window.location = '#about';
+			break;
+			case 'menu-portfolio':
+				$('html').animate({ scrollTop: blockHeights.heightTopPart +
+																				blockHeights.heightMiddlePart +
+																				200});
+				window.location = '#portfolio';
+			break;
+			case 'menu-contacts':
+				$('html').animate({ scrollTop: blockHeights.heightTopPart +
+																				blockHeights.heightMiddlePart +
+																				blockHeights.heightPortfolioBlock +
+																				200});
+				window.location = '#order';
+			break;
+		}
+	});
 
 	$('button.btn-order').on('click', () => {
 		$('form').animate({top: 100});

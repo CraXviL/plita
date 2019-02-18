@@ -28,9 +28,21 @@
 
 <body>
 
+	<form class="position-fixed text-center" action="">
+		<img src="img/close.png" alt="close.png">
+		<h2>ЗАБРОНИРОВАТЬ СТОЛ</h2>
+		<input name="name" type="text" placeholder="ВАШЕ ИМЯ">
+		<input name="tel" type="tel" placeholder="НОМЕР ТЕЛЕФОНА">
+		<input name="date" type="text" placeholder="ДАТА И ВРЕМЯ">
+		<input name="count" type="text" placeholder="КОЛЛИЧЕСТВО ПЕРСОН">
+		<input name="submit" class="btn btn-order" type="submit" value="ОТПРАВИТЬ">
+		<p>ИЛИ ПОЗВОНИТЕ ПО ТЕЛЕФОНУ</p>
+		<h3>+7 (911) 920-32-42</h3>
+	</form>
+
 	<div id="header-carousel" class="block carousel slide" data-ride="carousel">
 		<div class="container">
-			<header class="row position-absolute justify-content-between">
+			<header class="row position-fixed justify-content-between">
 				<nav class="navbar navbar-expand-lg p-0">
 				  <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo.png"></a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,16 +73,8 @@
 				</h1>
 			</div>
 		</div>
-	  <ol class="carousel-indicators">
-	    <li data-target="#header-carousel" data-slide-to="0" class="active">1</li>
-	    <li data-target="#header-carousel" data-slide-to="1">2</li>
-	    <li data-target="#header-carousel" data-slide-to="2">3</li>
-	    <li data-target="#header-carousel" data-slide-to="3">4</li>
-	    <li data-target="#header-carousel" data-slide-to="4">5</li>
-	    <li data-target="#header-carousel" data-slide-to="5">6</li>
-	    <li data-target="#header-carousel" data-slide-to="6">7</li>
-	  </ol>
-	  <div class="carousel-inner">
+
+		<div class="carousel-inner">
 	    <div class="carousel-item active">
 	      <img src="img/photo1.jpg" class="d-block w-100" alt="photo1.jpg">
 	    </div>
@@ -93,14 +97,25 @@
 	      <img src="img/photo7.jpg" class="d-block w-100" alt="photo7.jpg">
 	    </div>
 	  </div>
-	  <a class="carousel-control-prev" href="#header-carousel" role="button" data-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
-	  </a>
-	  <a class="carousel-control-next" href="#header-carousel" role="button" data-slide="next">
-	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Next</span>
-	  </a>
+		<div class="carousel-footer">
+		  <ol class="carousel-indicators">
+		    <li data-target="#header-carousel" data-slide-to="0" class="active">1</li>
+		    <li data-target="#header-carousel" data-slide-to="1">2</li>
+		    <li data-target="#header-carousel" data-slide-to="2">3</li>
+		    <li data-target="#header-carousel" data-slide-to="3">4</li>
+		    <li data-target="#header-carousel" data-slide-to="4">5</li>
+		    <li data-target="#header-carousel" data-slide-to="5">6</li>
+		    <li data-target="#header-carousel" data-slide-to="6">7</li>
+		  </ol>
+		  <a class="carousel-control-prev float-left" href="#header-carousel" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next float-right" href="#header-carousel" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
 	</div>
 
 	<div class="block block-about">
@@ -139,11 +154,19 @@
 	<div class="block block-menu">
 		<div class="container">
 			<div class="row">
-				<ul class="menu-list col d-flex justify-content-between align-items-center">
-					<li class="menu-item"><a href=""><h3>основное <span>меню</span></h3></a></li>
-					<li class="menu-item"><a href=""><h3>барное <span>меню</span></h3></a></li>
-					<li class="menu-item"><a href=""><h3>детское <span>меню</span></h3> </a></li>
-					<li class="menu-item"><a href=""><h3>банкетное <span>меню</span></h3></a></li>
+				<ul class="menu-list col d-flex flex-column flex-lg-row justify-content-between align-items-center">
+					<li class="menu-item">
+						<a href=""><h3>основное <span>меню</span></h3></a>
+					</li>
+					<li class="menu-item">
+						<a href=""><h3>барное <span>меню</span></h3></a>
+					</li>
+					<li class="menu-item">
+						<a href=""><h3>детское <span>меню</span></h3> </a>
+					</li>
+					<li class="menu-item">
+						<a href=""><h3>банкетное <span>меню</span></h3></a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -191,7 +214,7 @@
 		</div>
 	</div>
 
-	<div class="block block-hashtag">
+	<div class="block block-photoes">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -199,11 +222,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center">
-			<img src="img/photo-small-1.jpg" alt="photo-small-1.jpg">
-			<img src="img/photo-small-2.jpg" alt="photo-small-2.jpg">
-			<img src="img/photo-small-3.jpg" alt="photo-small-3.jpg">
-			<img src="img/photo-small-4.jpg" alt="photo-small-4.jpg">
+		<div class="photoes d-lg-flex justify-content-center">
+			<div class="d-flex justify-content-center">
+				<img src="img/photo-small-1.jpg" alt="photo-small-1.jpg">
+				<img src="img/photo-small-2.jpg" alt="photo-small-2.jpg">
+			</div>
+			<div class="d-flex justify-content-center">
+				<img src="img/photo-small-3.jpg" alt="photo-small-3.jpg">
+				<img src="img/photo-small-4.jpg" alt="photo-small-4.jpg">
+			</div>
 		</div>
 	</div>
 
