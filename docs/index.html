@@ -40,10 +40,10 @@
 		<h3>+7 (911) 920-32-42</h3>
 	</form>
 
-	<div id="header-carousel" class="block carousel slide" data-ride="carousel">
-		<div class="container">
-			<header class="row position-fixed justify-content-between">
-				<nav class="navbar navbar-expand-lg p-0">
+	<header class="row fixed-top">
+		<div class="container justify-content-between pl-lg-0">
+			<nav class="navbar navbar-expand-lg p-md-0">
+				<div class="wrapper-nav d-flex justify-content-between align-items-center">
 				  <a class="navbar-brand order-lg-0 order-1" href="#"><img src="img/logo.png" alt="logo.png"></a>
 				  <button class="navbar-toggler order-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
@@ -64,10 +64,20 @@
 				      </li>
 				    </ul>
 				  </div>
-				<img class="d-sm-none order-2" src="img/phone.png" alt="phone.png">
+				<a class="d-md-none order-2" href="tel:89119203242">
+					<img src="img/phone.png" alt="
+					phone.png">
+				</a>
+			</div>
+			<div class="wrapper-btn">
 				<button class="btn btn-order order-3">забронировать стол</button>
-				</nav>
-			</header>
+			</div>
+			</nav>
+		</div>
+	</header>
+
+	<div id="header-carousel" class="block d-md-block d-none carousel slide" data-ride="carousel">
+		<div class="container">
 			<div class="description position-absolute d-none d-lg-block">
 				<h1>PLITA Restaurant & Bar
 					<small>— это про уют и тепло,  про вкус и удовольствие, про атмосферу и эмоции.</small>
@@ -223,7 +233,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="photoes d-lg-flex justify-content-center">
+		<div class="photoes d-xl-flex justify-content-center">
 			<div class="d-flex justify-content-center">
 				<img src="img/photo-small-1.jpg" alt="photo-small-1.jpg">
 				<img src="img/photo-small-2.jpg" alt="photo-small-2.jpg">
@@ -237,9 +247,9 @@
 
 	<div class="block block-contacts">
 		<div class="container">
-			<h2>контакты</h2>
-			<div class="block-about-text text-left">
-				<p>САНКТ-ПЕТЕРБУРГ,капитанская улица, 4
+			<h2 class="text-md-left text-center mx-auto mx-md-0">контакты</h2>
+			<div class="block-contacts-text text-md-left text-center mx-auto mx-md-0">
+				<p>САНКТ-ПЕТЕРБУРГ, капитанская улица, 4
 				(вход с капитанской улицы во дворе)</p>
 				<div class="space"></div>
 				<p>Пн-Чт: 11:00-23:00<br>
@@ -250,9 +260,9 @@
 				<p>+7 (911) 920-32-42<br>
 				plita.rest@ya.ru</p>
 				<div class="space"></div>
-				<div class="socials d-flex">
-					<p>присоединяйтесь</p>
-					<ul class="socials-list d-flex ml-1">
+				<div class="socials d-flex flex-wrap text-md-left text-center mx-auto mx-md-0">
+					<p class="w-md-100 my-3 mx-auto my-md-0 ml-md-0">присоединяйтесь</p>
+					<ul class="socials-list d-flex justify-content-between mx-auto mx-md-0">
 						<li class="socials-item">
 							<a href="https://vk.com/plita_rest" class="socials-link">
 								<img src="img/vk.png" alt="vk.png">
@@ -275,8 +285,9 @@
 						</li>
 					</ul>
 				</div>
+				<img class="map d-block d-md-none w-100 mt-5" src="img/map.png" alt="map.png">
 			</div>
-			<footer>
+			<footer class="text-md-left text-center">
 				© plita, 2019
 			</footer>
 		</div>
