@@ -6,16 +6,19 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 
-	header
-		nav.navbar
-			width: 940px
+
 
 // ≥992px
 +media-breakpoint-down(md)
 
 	header
-		nav.navbar
-			width: 720px
+		.wrapper-nav
+			width: 60%
+		.wrapper-btn
+			width: 36%
+
+	#header-carousel .carousel-indicators li
+		width: 60px
 
 	form
 		right: 100px
@@ -23,13 +26,25 @@
 +media-breakpoint-down(sm)
 
 	header
+		position: relative !important
+		background: url('../img/main/photo2.jpg') no-repeat left top
 		nav.navbar
-			width: 540px
+			height: 666px
+			padding-bottom: 44px
+			flex-flow: column
+		.wrapper-nav, .wrapper-btn, .btn-order
+			width: 100% !important
 
-	.block-about .wrapper 
+	.block-about .wrapper
 		background: none
 		h2
-			margin: 200px auto 0 auto
+			margin: 60px auto 0 auto
+
+	.block-contacts
+		height: 100%
+		background: black
+		.block-contacts-text
+			width: 300px
 
 // ≥576px
 +media-breakpoint-down(xs)
