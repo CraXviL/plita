@@ -25,6 +25,7 @@ body
 		width: 100%
 
 b, strong
+	font-family: "Bebas Neue"
 	font-weight: bold
 
 a
@@ -62,12 +63,12 @@ img
 	margin: 0 auto
 
 .space
-	height: 20px
+	height: 18px
 
 #header-carousel
 	max-height: 900px
 	.carousel-footer
-		margin-top: -100px
+		margin-top: -120px
 	.carousel-indicators
 		margin-left: 22%
 		position: relative
@@ -78,6 +79,7 @@ img
 			text-indent: 0
 			&:hover
 				font-weight: bold
+				opacity: 1
 	.carousel-control-next, .carousel-control-prev
 		width: 30%
 		margin-top: -15px
@@ -85,21 +87,21 @@ img
 		opacity: .7
 		&:hover
 			opacity: 1
-	.carousel-control-prev-icon
-		width: 100px
-		background-image: url('../img/main/arrow-left.png')
-	.carousel-control-next-icon
+	.carousel-control-prev-icon, .carousel-control-next-icon
 		width: 100px
 		background-image: url('../img/main/arrow-right.png')
+	.carousel-control-prev-icon
+		transform: rotate(180deg)
 
 header
 	z-index: 100
+	background-color: rgba(0, 0, 0, 0.3)
 	a.navbar-brand
-		padding-top: 15px
+		padding-top: 20px
+		&:hover
+			transform: scale(1.01)
 	.navbar-toggler-icon
 		background-image: url('../img/main/menu.png')
-	ul.navbar-nav
-		margin: 0 30px 5px 30px
 	li.nav-item
 		height: 30px
 		border-bottom: $thin-border
@@ -111,8 +113,10 @@ header
 	.wrapper-nav
 		width: 100%
 	.wrapper-btn
-		width: 29%
+		width: 31%
 		.btn-order
+			height: 40px
+			width: 240px
 			padding: 7px 19px
 			color: $text
 			font-family: "Bebas Neue"
@@ -140,8 +144,8 @@ header
 		font-weight: bold
 		line-height: 42px
 		small
-			letter-spacing: 2px
 			font-family: $default-font
+			font-size: 30px
 
 .block-about
 	color: $accent
@@ -150,7 +154,7 @@ header
 		background: url('../img/main/block-about.jpg') no-repeat left
 		h2
 			width: 350px
-			margin: 200px 0 0 0
+			margin: 220px 0 0 0
 			padding: 45px 0 27px
 			border-bottom: 3px solid $accent
 		.block-about-text
@@ -160,12 +164,9 @@ header
 			line-height: 25px
 			letter-spacing: 2px
 			overflow: hidden
-		strong
-			font-family: "Bebas Neue"
-			font-weight: bold
 
 .block-menu
-	margin: 120px auto
+	margin: 115px auto
 	background-color: $accent
 	.menu-item
 		margin: 43px 0
@@ -182,7 +183,7 @@ header
 			font-weight: 300
 
 .block-stock
-	margin-top: 100px
+	margin-top: 105px
 	.stock-item
 		background-color: $accent
 	img
@@ -201,7 +202,7 @@ header
 
 .block-photoes
 	h3
-		margin: 90px 0 50px 0
+		margin: 85px 0 45px 0
 		color: $accent
 		font-family: "Bebas Neue"
 		font-size: 42px
@@ -209,18 +210,18 @@ header
 		letter-spacing: 4px
 		text-transform: uppercase
 	.photoes
-		margin: 0 auto
+		margin: 5px auto
 
 .block-contacts
 	height: 900px
 	background: url('../img/main/block-contacts.jpg') no-repeat left
 	h2
 		width: 350px
-		margin: 115px 0 0 0
+		margin: 120px 0 0 0
 		padding-top: 105px
 		color: $text
 	.block-contacts-text
-		width: 450px
+		width: 455px
 		margin-top: 55px
 		font-family: "Bebas Neue"
 		font-size: 25px
@@ -231,12 +232,14 @@ header
 		.space
 			height: 50px
 		.socials-list
-			width: 220px
+			width: 230px
 
 footer
-	padding-top: 100px
+	padding-top: 125px
 	font-size: 20px
 	letter-spacing: 2.67px
+	a:hover
+		text-decoration: underline
 
 form
 	top: -600px
@@ -245,7 +248,7 @@ form
 	width: 500px
 	padding: 20px 50px
 	background-color: $accent
-	z-index: 1000
+	z-index: 10000
 	img
 		cursor: pointer
 	h2
