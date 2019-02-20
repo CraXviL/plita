@@ -25,36 +25,73 @@
 // ≥768px
 +media-breakpoint-down(sm)
 
+	form
+		right: 0
+		width: 100%
+
 	header
 		position: relative !important
 		background: url('../img/main/photo-1.jpg') no-repeat left top
+		a.navbar-brand
+			padding: 0
 		nav.navbar
-			height: 666px
+			height: 100vh
 			padding-bottom: 44px
 			flex-flow: column
 		.wrapper-nav, .wrapper-btn, .btn-order
 			width: 100% !important
 
+	h2
+		width: 70% !important
+		margin: 0 auto !important
+		padding: 60px 0 15px 0 !important
+		font-size: 40px
+		letter-spacing: 4px
+
+	.space
+		height: 12px
+
 	.block-about .wrapper
+		height: auto
 		background: none
 		h2
-			margin: 60px auto 0 auto
+		.block-about-text
+			width: auto
+			margin-top: 30px
+			font-size: 16px
+			letter-spacing: 1.5px
+			line-height: 20px
+
+	.block-menu
+		margin: 110px 0 0 0
+		background-color: white
+		.menu-item
+			height: 70px
+			font-size: 24px
+			letter-spacing: 3.2px
+			background-color: $accent
+
+	.block-stock
+		margin: 0 !important
+
+	.block-photoes
+		h3
+			margin: 50px 0 25px 0
 
 	.block-contacts
+		margin-top: 70px
 		height: 100%
 		background: black
 		.block-contacts-text
 			width: 300px
 
+	footer
+		padding-top: 50px
+		font-size: 14px
+
 // ≥576px
 +media-breakpoint-down(xs)
 
-	header
-		nav.navbar
-			width: 92%
-
-	form
-		right: 0
 
 /*==========  Mobile First  ==========*/
 

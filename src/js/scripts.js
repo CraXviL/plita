@@ -48,7 +48,7 @@ $(document).ready(function() {
 	$('button.btn-order').on('click', () => {
 		$('form').animate({top: 100});
 		$('form img').on('click', () => {
-			$('form').animate({top: -600});
+			$('form').animate({top: -700});
 		});
 	});
 
