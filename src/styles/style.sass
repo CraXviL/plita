@@ -10,6 +10,7 @@
 
 body
 	font-size: 16px
+	font-weight: 300
 	min-width: 320px
 	position: relative
 	line-height: 1.65
@@ -65,7 +66,14 @@ img
 	height: 18px
 
 #header-carousel
-	max-height: 900px
+	height: 100vh
+	.carousel-inner
+		height: inherit
+		.carousel-item
+			height: inherit
+			img
+				height: inherit
+				object-fit: cover
 	.carousel-footer
 		margin-top: -120px
 	.carousel-indicators
@@ -128,7 +136,7 @@ header
 				border: $thick-border
 
 .description
-	bottom: 60px
+	bottom: 200px
 	width: 555px
 	height: 126px
 	text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)
@@ -172,9 +180,10 @@ header
 		font-size: 30px
 		letter-spacing: 5px
 		text-transform: uppercase
-		border-bottom: $thin-border__transparent
-		&:hover
-			border-bottom: $thin-border
+		a
+			border-bottom: $thin-border__transparent
+			&:hover
+				border-bottom: $thin-border
 		span
 			font-family: "Bebas Neue Book"
 			font-weight: 300
