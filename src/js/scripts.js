@@ -77,6 +77,16 @@ $(document).ready(function() {
 		});
 	});
 
+	$('.btn-more').on('click', function() {
+		$(this).fadeOut().siblings('*:not(img.close)').animate({ opacity: 0})
+			.siblings('.stock-item-text__more').animate({ opacity: 1})
+			.siblings('img.close').fadeIn();
+	});
+	$('.stock-item img.close').on('click', function() {
+		$(this).fadeOut().siblings('*:not(button)').animate({ opacity: 0})
+			.siblings('button').fadeIn().siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
+	});
+
 	$('form').submit((e) => {
 		e.preventDefault();
 		$.ajax({

@@ -197,6 +197,7 @@ header
 	.stock-item
 		margin: 15px
 		padding: 27px
+		position: relative
 		background-color: $accent
 	img
 		width: 305px
@@ -206,10 +207,28 @@ header
 		font-size: 25px
 		letter-spacing: 3px
 		line-height: 30px
-		span
-			font-family: "Bebas Neue Bold"
-	.stock-item:first-child .stock-item-text
-		width: 230px
+	span
+		font-family: "Bebas Neue Bold"
+	img.close
+		top: 20px
+		right: 20px
+		width: 17px
+		height: 17px
+		display: none
+		cursor: pointer
+	.stock-item-text__more
+		font-size: 17px
+		letter-spacing: 2px
+		line-height: 23px
+		opacity: 0
+	.btn-more
+		bottom: 80px
+		color: $text
+		font-size: 17px
+		letter-spacing: 2px
+		text-decoration: underline
+	.stock-item:first-child .stock-item-text, .stock-item:last-child .stock-item-text__more
+		width: 250px
 
 #block-photoes
 	h3
