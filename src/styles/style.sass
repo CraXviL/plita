@@ -63,7 +63,42 @@ img
 	margin: 0 auto
 
 .space
-	height: 18px
+	height: 19px
+
+header
+	z-index: 100
+	background-color: rgba(0, 0, 0, 0.3)
+	a.navbar-brand
+		padding: 35px 5px
+		transform: scale(1.1)
+		&:hover
+			transform: scale(1.01)
+	.navbar-toggler-icon
+		background-image: url('../img/svg/menu.svg')
+		transform: scaleY(.8)
+	#navbarNav
+		flex: 740px 0
+	li.nav-item
+		height: 30px
+		border-bottom: $thin-border
+		&:hover
+			border-bottom: $thick-border
+		a.nav-link
+			font-size: 17px
+			letter-spacing: 5px
+	.btn-order
+		height: 40px
+		flex: 240px 0
+		color: $text
+		font-family: "Bebas Neue"
+		letter-spacing: 5px
+		white-space: nowrap
+		border-radius: 4px
+		border: $thin-border
+		&:hover
+			color: $text
+			font-weight: bold
+			border: $thick-border
 
 #header-carousel
 	height: 100vh
@@ -75,12 +110,13 @@ img
 				height: inherit
 				object-fit: cover
 	.carousel-footer
-		margin-top: -120px
+		margin-top: -100px
 	.carousel-indicators
-		margin-left: 22%
+		margin-right: 9%
+		margin-left: 18%
 		position: relative
 		li
-			width: 103px
+			width: 14%
 			background-color: transparent
 			font-size: 25px
 			text-indent: 0
@@ -88,7 +124,7 @@ img
 				font-weight: bold
 				opacity: 1
 	.carousel-control-next, .carousel-control-prev
-		width: 30%
+		width: 100px
 		margin-top: -15px
 		position: relative
 		opacity: .7
@@ -100,43 +136,8 @@ img
 	.carousel-control-prev-icon
 		transform: rotate(180deg)
 
-header
-	z-index: 100
-	background-color: rgba(0, 0, 0, 0.3)
-	a.navbar-brand
-		padding: 20px 0
-		&:hover
-			transform: scale(1.01)
-	.navbar-toggler-icon
-		background-image: url('../img/main/menu.png')
-	li.nav-item
-		height: 30px
-		border-bottom: $thin-border
-		&:hover
-			border-bottom: $thick-border
-		a.nav-link
-			font-size: 17px
-			letter-spacing: 5px
-	.wrapper-nav
-		width: 100%
-	.wrapper-btn
-		width: 31%
-		.btn-order
-			height: 40px
-			width: 240px
-			color: $text
-			font-family: "Bebas Neue"
-			letter-spacing: 5px
-			white-space: nowrap
-			border-radius: 4px
-			border: $thin-border
-			&:hover
-				color: $text
-				font-weight: bold
-				border: $thick-border
-
 .description
-	bottom: 200px
+	bottom: 120px
 	width: 555px
 	height: 126px
 	text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)
@@ -157,9 +158,10 @@ header
 	.wrapper
 		height: 800px
 		background: url('../img/main/block-about.jpg') no-repeat left
+		background-size: cover
 		h2
 			width: 350px
-			margin: 220px 0 0 0
+			margin: 120px 0 0 0
 			padding: 45px 0 27px
 			border-bottom: 3px solid $accent
 		.block-about-text
@@ -171,7 +173,7 @@ header
 			letter-spacing: 1.9px
 
 .block-menu
-	margin: 115px auto
+	margin: 120px auto
 	background-color: $accent
 	.menu-item
 		height: 120px
@@ -189,12 +191,16 @@ header
 			font-weight: 300
 
 .block-stock
-	margin-top: 105px
+	margin-top: 90px
+	h2
+		margin-bottom: 35px
 	.stock-item
+		margin: 15px
+		padding: 27px
 		background-color: $accent
 	img
-		width: 300px
-		height: 300px
+		width: 305px
+		height: 305px
 	.stock-item-text
 		width: 265px
 		font-size: 25px
@@ -202,7 +208,7 @@ header
 		line-height: 30px
 		span
 			font-family: "Bebas Neue Bold"
-	.stock-item:first-child .stock-item-text, .stock-item:last-child .stock-item-text
+	.stock-item:first-child .stock-item-text
 		width: 230px
 
 .block-photoes
@@ -217,28 +223,27 @@ header
 		margin: 5px auto
 
 .block-contacts
-	height: 900px
 	background: url('../img/main/block-contacts.jpg') no-repeat left
 	h2
 		width: 350px
-		margin: 120px 0 0 0
-		padding-top: 105px
+		margin: 100px 0 0 0
+		padding-top: 110px
 		color: $text
 	.block-contacts-text
 		width: 455px
-		margin-top: 55px
+		margin-top: 50px
 		font-family: "Bebas Neue Bold"
 		font-size: 25px
 		line-height: 37px
 		letter-spacing: 3px
 		overflow: hidden
 		.space
-			height: 50px
+			height: 38px
 		.socials-list
 			width: 230px
 
 footer
-	padding-top: 125px
+	padding-top: 85px
 	font-size: 20px
 	letter-spacing: 2.67px
 	a:hover

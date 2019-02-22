@@ -1,5 +1,5 @@
 @import "vars"
-@import 'bootstrap/scss/bootstrap-grid.scss'
+@import "_mixins/breakpoints"
 
 /*==========  Desktop First  ==========*/
 
@@ -11,17 +11,27 @@
 // ≥992px
 +media-breakpoint-down(md)
 
-	header
-		.wrapper-nav
-			width: 60%
-		.wrapper-btn
-			width: 36%
-
 	#header-carousel .carousel-indicators li
 		width: 60px
 
-	form
-		right: 100px
+	header
+		nav.navbar
+			.navbar-toggler
+				width: 10%
+				padding: 50px
+
+	.block-menu
+		background-color: white
+		.menu-item
+			height: 70px
+			width: 100%
+			font-size: 24px
+			letter-spacing: 3.2px
+			background-color: $accent
+
+	.block-stock
+		.stock-item
+			margin: 8px
 // ≥768px
 +media-breakpoint-down(sm)
 
@@ -33,12 +43,18 @@
 		position: relative !important
 		background: url('../img/main/photo-1.jpg') no-repeat left top
 		a.navbar-brand
-			padding: 0
+			padding: 0 100px
 		nav.navbar
-			padding-bottom: 44px
-			flex-flow: column
-		.wrapper-nav, .wrapper-btn, .btn-order
-			width: 100% !important
+			height: 100vh
+			align-items: baseline
+			.navbar-toggler, .phone
+				width: 10%
+				padding-top: 35px
+			.phone
+				left: auto
+		.btn-order
+			margin-top: 150%
+			flex-grow: 1
 
 	h2
 		width: 70% !important
@@ -63,12 +79,6 @@
 
 	.block-menu
 		margin: 110px 0 0 0
-		background-color: white
-		.menu-item
-			height: 70px
-			font-size: 24px
-			letter-spacing: 3.2px
-			background-color: $accent
 
 	.block-stock
 		margin: 0 !important
@@ -83,6 +93,8 @@
 		background: black
 		.block-contacts-text
 			width: 300px
+			.socials-list
+				width: 190px
 
 	footer
 		padding-top: 50px
