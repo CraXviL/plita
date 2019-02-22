@@ -73,11 +73,18 @@ header
 		transform: scale(1.1)
 		&:hover
 			transform: scale(1.15)
-	.navbar-toggler-icon
-		background-image: url('../img/svg/menu.svg')
-		transform: scaleY(.8)
+	.navbar-toggler
+		width: 20%
+		padding: 50px
+		.navbar-toggler-icon
+			background-image: url('../img/svg/menu.svg')
+			transform: scaleY(.8)
 	#navbarNav
 		flex: 740px 0
+	img.close-menu
+		display: none
+		cursor: pointer
+		z-index: 1000
 	li.nav-item
 		height: 30px
 		border-bottom: $thin-border
@@ -209,7 +216,7 @@ header
 		line-height: 30px
 	span
 		font-family: "Bebas Neue Bold"
-	img.close
+	img.close-more
 		top: 20px
 		right: 20px
 		width: 17px

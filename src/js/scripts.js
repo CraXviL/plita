@@ -11,10 +11,9 @@ $(document).ready(function() {
 		heightAboutBlock: 0,
 		heightMiddlePart: 0,
 		heightBottomPart: 0,
-		offset: 100,
+		offset: 0,
 		calcBlockHeight() {
-			this.heightTopPart = parseInt($('header').css('height'), 10) +
-											parseInt($('#header-carousel').css('height'), 10) -
+			this.heightTopPart = parseInt($('#header-carousel').css('height'), 10) -
 											this.offset;
 			this.heightAboutBlock = parseInt($('#block-about').css('height'), 10) -
 											this.offset;
@@ -40,15 +39,15 @@ $(document).ready(function() {
 			break;
 			case 'menu-menu':
 				$('html').animate({ scrollTop: blockHeights.heightTopPart +
-																				blockHeights.heightAboutBlock +
-																				200});
+																				blockHeights.heightAboutBlock
+																				});
 				window.location = '#block-menu';
 			break;
 			case 'menu-stock':
 				$('html').animate({ scrollTop: blockHeights.heightTopPart +
 																				blockHeights.heightAboutBlock +
-																				blockHeights.heightMiddlePart +
-																				200});
+																				blockHeights.heightMiddlePart
+																				});
 				window.location = '#block-stock';
 			break;
 			case 'menu-contacts':
@@ -62,7 +61,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(document).onDelay('scroll', () => {
+	$(document).onDelay('scroll', function() {
 		if (window.scrollY > 5) 
 			$('header').css({ 'background-color': 'rgba(0, 0, 0, 0.3)' });
 		else {
@@ -70,7 +69,16 @@ $(document).ready(function() {
 		}
 	}, 100);
 
-	$('button.btn-order').on('click', () => {
+	$('.navbar-toggler').on('click', function() {
+		$(this).hide().siblings().hide().siblings('.navbar-collapse').show();
+		$('header .close-menu').show().on('click', function() {
+			$(this).parents('nav').children().hide()
+				.siblings('*:not(.navbar-collapse)').show().siblings('.close-menu').hide();
+
+		});
+	});
+
+	$('button.btn-order').on('click', function() {
 		$('form').animate({top: 100});
 		$('form img').on('click', () => {
 			$('form').animate({top: -700});
@@ -78,11 +86,11 @@ $(document).ready(function() {
 	});
 
 	$('.btn-more').on('click', function() {
-		$(this).fadeOut().siblings('*:not(img.close)').animate({ opacity: 0})
+		$(this).fadeOut().siblings('*:not(img.close-more)').animate({ opacity: 0})
 			.siblings('.stock-item-text__more').animate({ opacity: 1})
-			.siblings('img.close').fadeIn();
+			.siblings('img.close-more').fadeIn();
 	});
-	$('.stock-item img.close').on('click', function() {
+	$('.stock-item img.close-more').on('click', function() {
 		$(this).fadeOut().siblings('*:not(button)').animate({ opacity: 0})
 			.siblings('button').fadeIn().siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
