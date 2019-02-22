@@ -67,12 +67,12 @@ img
 
 header
 	z-index: 100
-	background-color: rgba(0, 0, 0, 0.3)
+	transition: all .5s ease
 	a.navbar-brand
 		padding: 35px 5px
 		transform: scale(1.1)
 		&:hover
-			transform: scale(1.01)
+			transform: scale(1.15)
 	.navbar-toggler-icon
 		background-image: url('../img/svg/menu.svg')
 		transform: scaleY(.8)
@@ -153,7 +153,7 @@ header
 			font-family: $default-font
 			font-size: 30px
 
-.block-about
+#block-about
 	color: $accent
 	.wrapper
 		height: 800px
@@ -172,7 +172,7 @@ header
 			line-height: 25px
 			letter-spacing: 1.9px
 
-.block-menu
+#block-menu
 	margin: 120px auto
 	background-color: $accent
 	.menu-item
@@ -190,7 +190,7 @@ header
 			font-family: "Bebas Neue Book"
 			font-weight: 300
 
-.block-stock
+#block-stock
 	margin-top: 90px
 	h2
 		margin-bottom: 35px
@@ -211,7 +211,7 @@ header
 	.stock-item:first-child .stock-item-text
 		width: 230px
 
-.block-photoes
+#block-photoes
 	h3
 		margin: 85px 0 45px 0
 		color: $accent
@@ -222,7 +222,7 @@ header
 	.photoes
 		margin: 5px auto
 
-.block-contacts
+#block-contacts
 	background: url('../img/main/block-contacts.jpg') no-repeat left
 	h2
 		width: 350px
