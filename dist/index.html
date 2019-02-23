@@ -28,22 +28,25 @@
 
 <body>
 
-	<form name="order" class="position-fixed text-center" action="">
-		<img class="close" src="img/close.png" alt="close.png">
-		<h2>ЗАБРОНИРОВАТЬ СТОЛ</h2>
-		<input name="name" type="text" placeholder="ВАШЕ ИМЯ">
-		<input name="tel" type="tel" placeholder="НОМЕР ТЕЛЕФОНА">
-		<input name="date" type="text" placeholder="ДАТА И ВРЕМЯ">
-		<input name="count" type="text" placeholder="КОЛЛИЧЕСТВО ПЕРСОН">
-		<input name="submit" class="btn btn-order" type="submit" value="ОТПРАВИТЬ">
-		<p>ИЛИ ПОЗВОНИТЕ ПО ТЕЛЕФОНУ</p>
-		<h3>+7 (911) 920-32-42</h3>
-	</form>
+	<div id="block-order" class="fixed-top w-100 h-100">
+		<form name="order" class="text-center mx-auto" action="">
+			<img class="close-form" src="img/close.svg" alt="close.svg">
+			<h2>ЗАБРОНИРОВАТЬ СТОЛ</h2>
+			<input name="name" type="text" placeholder="ВАШЕ ИМЯ">
+			<input name="tel" type="tel" placeholder="НОМЕР ТЕЛЕФОНА">
+			<input name="date" type="text" placeholder="ДАТА И ВРЕМЯ">
+			<input name="count" type="text" placeholder="КОЛЛИЧЕСТВО ПЕРСОН">
+			<input name="count" type="text" placeholder="ПОЖЕЛАНИЯ ПО СТОЛУ">
+			<input name="submit" class="btn btn-order" type="submit" value="ОТПРАВИТЬ">
+			<p>ИЛИ ПОЗВОНИТЕ ПО ТЕЛЕФОНУ</p>
+			<h3>+7 (911) 920-32-42</h3>
+		</form>
+	</div>
 
 	<header class="row fixed-top">
 		<div class="container justify-content-between p-lg-0">
 			<nav class="navbar navbar-expand-lg p-md-0 px-4 pt-3">
-			  <a class="navbar-brand order-lg-0 order-1 mx-auto" href="#"><img src="img/logo.svg" alt="logo.svg"></a>
+			  <a class="navbar-brand order-lg-0 order-1 ml-md-0 mx-auto" href="#"><img src="img/logo.svg" alt="logo.svg"></a>
 			  <button class="navbar-toggler fixed-top order-0 mx-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -65,7 +68,7 @@
 			    </ul>
 			  </div>
 				<a class="phone d-md-none fixed-top order-2 mx-3" href="tel:89119203242">
-					<img src="img/phone.png" alt="phone.png">
+					<img src="img/phone.svg" alt="phone.svg">
 				</a>
 				<button class="btn btn-order order-3">забронировать стол</button>
 			</nav>
@@ -200,16 +203,16 @@
 			<div class="row">
 				<ul class="menu-list col d-flex flex-wrap justify-content-between align-items-center">
 					<li class="menu-item d-flex justify-content-center align-items-center my-1 my-lg-0">
-						<a href="docs/menuMain.pdf"><h3>основное <span>меню</span></h3></a>
+						<a href="docs/menuMain.pdf"><h4><strong>основное</strong> меню</h4></a>
 					</li>
 					<li class="menu-item d-flex justify-content-center align-items-center my-1 my-lg-0">
-						<a href="docs/menuBar.pdf"><h3>барное <span>меню</span></h3></a>
+						<a href="docs/menuBar.pdf"><h4><strong>барное</strong> меню</h4></a>
 					</li>
 					<li class="menu-item d-flex justify-content-center align-items-center my-1 my-lg-0">
-						<a href="docs/menuChild.pdf"><h3>детское <span>меню</span></h3> </a>
+						<a href="docs/menuChild.pdf"><h4><strong>детское</strong> меню</h4> </a>
 					</li>
 					<li class="menu-item d-flex justify-content-center align-items-center my-1 my-lg-0">
-						<a href="docs/menuBanket.pdf"><h3>банкетное <span>меню</span></h3></a>
+						<a href="docs/menuBanket.pdf"><h4><strong>банкетное</strong> меню</h4></a>
 					</li>
 				</ul>
 			</div>
@@ -233,27 +236,27 @@
 				<div class="col d-flex flex-wrap justify-content-center p-md-0">
 					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
-						<p class="stock-item-text position-absolute">в <span>день рождение</span> скидка <span>10%</span> и угощения</p>
+						<p class="stock-item-text position-absolute">в <strong>день рождение</strong> скидка <strong>10%</strong> и угощения</p>
 					</div>
 					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
-						<p class="stock-item-text position-absolute">На <span>кофе с собой</span> действует скидка <span>20%</span></p>
+						<p class="stock-item-text position-absolute">На <strong>кофе с собой</strong> действует скидка <strong>20%</strong></p>
 					</div>
 					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
-						<p class="stock-item-text position-absolute">При предъявлении <span>студенческого билета</span> или <span>карты ISIC</span>, скидка <span>10%</span></p>
+						<p class="stock-item-text position-absolute">При предъявлении <strong>студенческого билета</strong> или <strong>карты ISIC</strong>, скидка <strong>10%</strong></p>
 					</div>
 					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
-						<p class="stock-item-text position-absolute">Если ваш смартфон украшает <span>наклейка PLITA</span>, то вы получаете скидку <span>10%</span></p>
+						<p class="stock-item-text position-absolute">Если ваш смартфон украшает <strong>наклейка PLITA</strong>, то вы получаете скидку <strong>10%</strong></p>
 					</div>
 					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
-						<p class="stock-item-text position-absolute"><span>программа ЛОЯЛЬНОСТИ</span> ПОСТОЯННЫМ ГОСТЯМ</p>
+						<p class="stock-item-text position-absolute"><strong>программа ЛОЯЛЬНОСТИ</strong> ПОСТОЯННЫМ ГОСТЯМ</p>
 						<img class="close-more position-absolute" src="img/close.png" alt="close.png">
-						<p class="stock-item-text__more position-absolute"><span>▪5% карта</span> (white) выдаётся при заполнении анкеты Гостя, которую вы сможете найти во Вконтакте.
+						<p class="stock-item-text__more position-absolute"><strong>▪5% карта</strong> (white) выдаётся при заполнении анкеты Гостя, которую вы сможете найти во Вконтакте.
 						<br><br>
-						<span>▪10% карта</span> (black) — при наличии 
+						<strong>▪10% карта</strong> (black) — при наличии 
 						разового счёта на сумму от 10 000 рублей.
 						<br><br>
 						Скидка по дисконтной карте не действует на меню бизнес-ланча и не суммируется с другими скидками/акциями, действующими в ресторане.</p>
@@ -261,9 +264,9 @@
 					</div>
 					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
-						<p class="stock-item-text position-absolute">получите <span>комплимент</span> от заведения за <span>отзыв</span></p>
+						<p class="stock-item-text position-absolute">получите <strong>комплимент</strong> от заведения за <strong>отзыв</strong></p>
 						<img class="close-more position-absolute" src="img/close.png" alt="close.png">
-						<p class="stock-item-text__more position-absolute">Оставьте отзыв на TripAdvisor, Google/Яндекс или в любых социальных сетях с отметкой <span>@plita_rest #plitarest</span> — получите комплимент от бара или шеф-повара.</p>
+						<p class="stock-item-text__more position-absolute">Оставьте отзыв на TripAdvisor, Google/Яндекс или в любых социальных сетях с отметкой <strong>@plita_rest #plitarest</strong> — получите комплимент от бара или шеф-повара.</p>
 						<button class="btn btn-more position-absolute">подробнее</button>
 					</div>
 				</div>
@@ -332,14 +335,25 @@
 					</ul>
 				</div>
 			</div>
-			<img class="map d-block d-md-none w-100 mt-5" src="img/map.png" alt="map.png">
+			<img class="map d-block d-md-none w-100 my-4" src="img/map.png" alt="map.png">
 
-			<footer class="d-flex justify-content-center justify-content-md-start pb-5">
+			<footer class="d-flex justify-content-center justify-content-md-start py-4">
 				<p class="mr-4">© plita, 2019</p>
 				<a href="https://craxvil.github.io/site-card">разработка сайта</a>
 			</footer>
 
 		</div>
+	</div>
+
+	<div id="stock-popup" class="fixed-bottom text-center d-flex flex-column justify-content-around p-5">
+		<div>
+			<img class="close-stock" src="img/close.svg" alt="close.svg">
+		</div>
+		<h2>НЕ ПРОПУСТИ НАШУ АКЦИЮ</h2>
+		<p>Оставьте отзыв о нас на <span>tripadvisor</span> и получите комплимент от бара или шеф-повара.</p>
+		<a href="https://www.tripadvisor.ru/Restaurant_Review-g298507-d13154408-Reviews-Plita-St_Petersburg_Northwestern_District.html" class="socials-link">
+			<img src="img/ta.png" alt="ta.png">
+		</a>
 	</div>
 
 <script type="text/javascript" src="bundle.js"></script></body>
