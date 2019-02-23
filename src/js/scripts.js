@@ -95,6 +95,13 @@ $(document).ready(function() {
 			.siblings('button').fadeIn(1500).siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
 
+	window.setTimeout(function() {
+		$('#stock-popup').animate({bottom: 0});
+		$('img.close-stock').on('click', function() {
+			$('#stock-popup').animate({bottom: -500});
+		});
+	}, 5000);
+
 	$('form').submit((e) => {
 		e.preventDefault();
 		$.ajax({
