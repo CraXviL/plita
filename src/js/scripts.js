@@ -79,9 +79,9 @@ $(document).ready(function() {
 	});
 
 	$('button.btn-order').on('click', function() {
-		$('form').animate({top: 100});
-		$('form img').on('click', () => {
-			$('form').animate({top: -700});
+		$('#block-order').show(500);
+		$('img.close-form').on('click', function() {
+			$('#block-order').hide(500);
 		});
 	});
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
 	});
 	$('.stock-item img.close-more').on('click', function() {
 		$(this).fadeOut().siblings('*:not(button)').animate({ opacity: 0})
-			.siblings('button').fadeIn().siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
+			.siblings('button').fadeIn(1500).siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
 
 	$('form').submit((e) => {
@@ -108,11 +108,10 @@ $(document).ready(function() {
 				console.log('Возникла ошибка при отправке');
 			}
 		});
-		$('form').fadeOut();
-		window.setTimeout(() => {
-			$('form').html('<h2>Отправлено!</h2><p>Я с Вами обязательно свяжусь</p>');
-			$('form').fadeIn();
-		}, 500);
+		$('form input').hide();
+		$('form h3').hide();
+		$('form h2').text('СООБЩЕНИЕ ОТПРАВЛЕНО');
+		$('form p').text('МЫ свяжемся с вами для подтверждения бронирования');
 	});
 
 	$('input[name="name"]').on('input', (e) => {

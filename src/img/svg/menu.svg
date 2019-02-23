@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="21" viewBox="0 0 30 21"><defs><path id="ic97a" d="M321 43v-1h30v1z"/><path id="ic97b" d="M321 53v-1h30v1z"/><path id="ic97c" d="M321 63v-1h30v1z"/></defs><g><g transform="translate(-321 -42)"><g><use fill="#fff" xlink:href="#ic97a"/></g><g><use fill="#fff" xlink:href="#ic97b"/></g><g><use fill="#fff" xlink:href="#ic97c"/></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="21px" viewBox="0 0 30 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>меню</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <image id="меню" x="0" y="0" width="30" height="21" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAVCAYAAABR915hAAAABGdBTUEAALGOfPtRkwAAACxJREFUSA1j/A8EDKNgNARGQ2A0BIZSCDCOllxDKbpG3ToaAqMhAA6BASu5ACTiC/hkKv1sAAAAAElFTkSuQmCC"></image>
+    </g>
+</svg>

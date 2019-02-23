@@ -28,22 +28,25 @@
 
 <body>
 
-	<form name="order" class="position-fixed text-center" action="">
-		<img class="close" src="img/main/close.png" alt="close.png">
-		<h2>ЗАБРОНИРОВАТЬ СТОЛ</h2>
-		<input name="name" type="text" placeholder="ВАШЕ ИМЯ">
-		<input name="tel" type="tel" placeholder="НОМЕР ТЕЛЕФОНА">
-		<input name="date" type="text" placeholder="ДАТА И ВРЕМЯ">
-		<input name="count" type="text" placeholder="КОЛЛИЧЕСТВО ПЕРСОН">
-		<input name="submit" class="btn btn-order" type="submit" value="ОТПРАВИТЬ">
-		<p>ИЛИ ПОЗВОНИТЕ ПО ТЕЛЕФОНУ</p>
-		<h3>+7 (911) 920-32-42</h3>
-	</form>
+	<div id="block-order" class="fixed-top w-100 h-100">
+		<form name="order" class="text-center mx-auto" action="">
+			<img class="close-form" src="img/svg/close.svg" alt="close.svg">
+			<h2>ЗАБРОНИРОВАТЬ СТОЛ</h2>
+			<input name="name" type="text" placeholder="ВАШЕ ИМЯ">
+			<input name="tel" type="tel" placeholder="НОМЕР ТЕЛЕФОНА">
+			<input name="date" type="text" placeholder="ДАТА И ВРЕМЯ">
+			<input name="count" type="text" placeholder="КОЛЛИЧЕСТВО ПЕРСОН">
+			<input name="count" type="text" placeholder="ПОЖЕЛАНИЯ ПО СТОЛУ">
+			<input name="submit" class="btn btn-order" type="submit" value="ОТПРАВИТЬ">
+			<p>ИЛИ ПОЗВОНИТЕ ПО ТЕЛЕФОНУ</p>
+			<h3><b>+7 (911) 920-32-42</b></h3>
+		</form>
+	</div>
 
 	<header class="row fixed-top">
 		<div class="container justify-content-between p-lg-0">
 			<nav class="navbar navbar-expand-lg p-md-0 px-4 pt-3">
-			  <a class="navbar-brand order-lg-0 order-1 mx-auto" href="#"><img src="img/svg/logo.svg" alt="logo.svg"></a>
+			  <a class="navbar-brand order-lg-0 order-1 ml-md-0 mx-auto" href="#"><img src="img/svg/logo.svg" alt="logo.svg"></a>
 			  <button class="navbar-toggler fixed-top order-0 mx-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -65,7 +68,7 @@
 			    </ul>
 			  </div>
 				<a class="phone d-md-none fixed-top order-2 mx-3" href="tel:89119203242">
-					<img src="img/main/phone.png" alt="phone.png">
+					<img src="img/svg/phone.svg" alt="phone.svg">
 				</a>
 				<button class="btn btn-order order-3">забронировать стол</button>
 			</nav>
@@ -332,9 +335,9 @@
 					</ul>
 				</div>
 			</div>
-			<img class="map d-block d-md-none w-100 mt-5" src="img/main/map.png" alt="map.png">
+			<img class="map d-block d-md-none w-100 my-4" src="img/main/map.png" alt="map.png">
 
-			<footer class="d-flex justify-content-center justify-content-md-start pb-5">
+			<footer class="d-flex justify-content-center justify-content-md-start py-4">
 				<p class="mr-4">© plita, 2019</p>
 				<a href="https://craxvil.github.io/site-card">разработка сайта</a>
 			</footer>

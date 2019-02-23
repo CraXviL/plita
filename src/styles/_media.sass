@@ -26,28 +26,45 @@
 // ≥768px
 +media-breakpoint-down(sm)
 
+	form
+		margin: 0
+		img.close-form
+			margin: 40px 0 0 0
+		h2
+			font-size: 35px
+			letter-spacing: 5px
+		input, p
+			font-size: 16px
+		h3
+			font-size: 28px
+			letter-spacing: 2.8px
+
 	header
 		position: relative !important
-		background: url('../img/main/photo-1.jpg') no-repeat left -200px top -50px
+		background: url('../img/main/photo-6.jpg') no-repeat right -200px top
 		background-size: 300%
 		@media (orientation: landscape)
 			background-size: 150%
 		a.navbar-brand
 			padding: 0 100px
 		nav.navbar
-			height: 95vh
+			height: 100vh
 			align-items: baseline
 			.navbar-toggler, .phone
-				padding: 35px 20px
+				padding: 40px 20px
 			.phone
+				color: white
 				left: auto
 			ul.navbar-nav
-				width: 110vw
-				height: 110vh
-				margin: -25px !important
+				top: -50px
+				bottom: -50px
+				left: -50px
+				right: -50px
 				padding: 200px 0
 				position: fixed
 				background-color: rgba(0,0,0, .7)
+				@media (orientation: landscape)
+					padding: 150px
 				li.nav-item
 					margin: 0 auto
 					border: 0
@@ -55,6 +72,7 @@
 						font-size: 25px
 						letter-spacing: 7.35px
 		.btn-order
+			margin-bottom: 10%
 			flex-grow: 1
 			align-self: flex-end
 
@@ -69,7 +87,7 @@
 			&.active
 				background-color: #8b302a
 
-	h2
+	.container h2
 		width: 70% !important
 		margin: 0 auto !important
 		padding: 60px 0 15px 0 !important
@@ -92,6 +110,8 @@
 
 	#block-menu
 		margin: 110px 0 0 0
+		h3
+			font-size: 24px
 
 	#block-stock
 		margin: 0 !important
@@ -110,7 +130,6 @@
 				width: 190px
 
 	footer
-		padding-top: 50px
 		font-size: 14px
 
 // ≥576px

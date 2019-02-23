@@ -1,9 +1,6 @@
 @import "vars"
 @import "fonts"
 
-::placeholder
-	color: #666
-
 ::selection
 	background-color: $accent
 	color: #fff
@@ -43,10 +40,6 @@ h2
 	letter-spacing: 6px
 	text-transform: uppercase
 
-h3
-	margin: 0
-	white-space: nowrap
-
 .block
 	max-width: $max-width
 	margin: 0 auto
@@ -54,20 +47,31 @@ h3
 .space
 	height: 19px
 
+.btn
+	height: 40px
+	flex: 240px 0 0
+	color: $text
+	font-family: "Bebas Neue"
+	letter-spacing: 5px
+	white-space: nowrap
+	border-radius: 4px
+	border: $thin-border
+	&:hover
+		color: $text
+		font-weight: bold
+		border: $thick-border
+
 header
-	z-index: 100
 	transition: all .5s ease
 	a.navbar-brand
 		padding: 35px 5px
-		transform: scale(1.1)
 		&:hover
-			transform: scale(1.15)
+			transform: scale(1.05)
 	.navbar-toggler
 		width: 20%
 		padding: 50px
 		.navbar-toggler-icon
-			background-image: url('../img/svg/menu.svg')
-			transform: scaleY(.8)
+			background: url('../img/svg/menu.svg')
 	#navbarNav
 		flex: 740px 0
 	img.close-menu
@@ -82,19 +86,6 @@ header
 		a.nav-link
 			font-size: 17px
 			letter-spacing: 5px
-	.btn-order
-		height: 40px
-		flex: 240px 0
-		color: $text
-		font-family: "Bebas Neue"
-		letter-spacing: 5px
-		white-space: nowrap
-		border-radius: 4px
-		border: $thin-border
-		&:hover
-			color: $text
-			font-weight: bold
-			border: $thick-border
 
 #header-carousel
 	height: 100vh
@@ -178,6 +169,8 @@ header
 		font-size: 30px
 		letter-spacing: 5px
 		text-transform: uppercase
+		h3
+			margin: 0
 		a
 			border-bottom: $thin-border__transparent
 			&:hover
@@ -192,7 +185,7 @@ header
 		margin-bottom: 35px
 	.stock-item
 		flex: 360px 1 0
-		padding: 25px
+		padding: 30px
 		position: relative
 		background-color: $accent
 	img
@@ -212,12 +205,13 @@ header
 		display: none
 		cursor: pointer
 	.stock-item-text__more
+		width: 325px
 		font-size: 17px
 		letter-spacing: 2px
 		line-height: 23px
 		opacity: 0
 	.btn-more
-		bottom: 80px
+		bottom: 100px
 		color: $text
 		font-size: 17px
 		letter-spacing: 2px
@@ -258,6 +252,7 @@ header
 			height: 38px
 		.socials-list
 			width: 230px
+			margin-top: -5px
 
 footer
 	padding-top: 85px
@@ -266,34 +261,38 @@ footer
 	a:hover
 		text-decoration: underline
 
+#block-order
+	display: none
+	background-color: rgba(0,0,0, .8)
+	z-index: 5000
+
 form
-	top: -700px
-	right: 500px
-	height: 600px
+	margin-top: 20%
 	width: 500px
 	max-width: 100%
-	padding: 20px 50px
-	background-color: $accent
+	padding: 15px
 	z-index: 10000
-	img
+	transition: all .5s ease
+	img.close-form
+		margin-right: -450px
 		cursor: pointer
 	h2
-		margin-top: 40px
+		margin-top: 30px
 		color: $text
 		font-size: 42px
-	input:not([type="submit"])
-		height: 60px
-		width: 80%
+	input
+		width: 90%
 		padding-top: 20px
 		color: $text
 		text-align: center
-		background-color: $accent
-		border: 0
-		border-bottom: $thin-border
 		font-size: 17px
 		letter-spacing: 2px
+	input:not([type="submit"])
+		height: 60px
+		background-color: transparent
+		border: 0
+		border-bottom: $thin-border
 	input[type="submit"]
-		width: 80%
 		margin: 50px 0 25px 0
 	p
 		font-size: 17px
