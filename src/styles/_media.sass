@@ -6,12 +6,16 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 
-
+	header
+		#navbarNav
+			flex: 440px 0 0
 
 // ≥992px
 +media-breakpoint-down(md)
 
 	header
+		#navbarNav
+			flex: 540px 0 0
 		nav.navbar
 			a.navbar-brand
 				transform: scale(1.2)
@@ -60,6 +64,7 @@
 				width: 100%
 				flex: 40px 0 0
 			ul.navbar-nav
+				width: auto !important
 				top: -50px
 				bottom: -50px
 				left: -50px
