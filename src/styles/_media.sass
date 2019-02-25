@@ -13,8 +13,6 @@
 
 	header
 		nav.navbar
-			height: 22vh
-			flex-wrap: wrap
 			a.navbar-brand
 				transform: scale(1.2)
 
@@ -49,18 +47,34 @@
 	header
 		position: relative !important
 		background: url('../img/main/photo-6.jpg') no-repeat right -200px top
-		background-size: 300%
+		background-size: 350%
 		@media (orientation: landscape)
 			background-size: 150%
 		nav.navbar
 			height: 100vh
-			align-items: baseline
 			.navbar-toggler, .phone
-				padding: 40px 20px
+				padding: 47px 20px
 			.phone
-				color: white
 				left: auto
-
+			.btn-order
+				width: 100%
+				flex: 40px 0 0
+			ul.navbar-nav
+				top: -50px
+				bottom: -50px
+				left: -50px
+				right: -50px
+				padding: 150px 0
+				position: fixed
+				background-color: rgba(0,0,0, .8)
+				@media (orientation: landscape)
+					padding: 100px
+				li.nav-item
+					margin: 0 auto
+					border: 0
+					a.nav-link
+						font-size: 25px
+						letter-spacing: .29em
 
 	.carousel-indicators
 		bottom: -50px
