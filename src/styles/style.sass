@@ -72,12 +72,11 @@ header
 		padding: 60px
 		.navbar-toggler-icon
 			background: url('../img/svg/menu.svg')
-	#navbarNav
-		flex: 740px 0
 	img.close-menu
 		display: none
 		cursor: pointer
-		z-index: 1000
+	#navbarNav
+		flex: 740px 0
 	li.nav-item
 		height: 30px
 		border-bottom: $thin-border
@@ -125,7 +124,7 @@ header
 
 .description
 	bottom: 130px
-	width: 555px
+	width: 565px
 	height: 126px
 	text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)
 	font-size: 30px
@@ -242,12 +241,18 @@ header
 		width: 455px
 		.space
 			height: 38px
-	.socials-list
+	ul.socials-list
 		width: 230px
 		margin-top: -5px
+		li.socials-item
+			opacity: .7
+			&:hover
+				opacity: 1
+
 
 footer
 	padding-top: 75px !important
+	font-family: $default-font
 	font-size: 20px
 	letter-spacing: .13em
 	a:hover
@@ -284,6 +289,8 @@ form
 		border-bottom: $thin-border
 	input[type="submit"]
 		margin: 50px 0 25px 0
+	input:focus
+		border-bottom: $thick-border
 	p
 		font-size: 17px
 		letter-spacing: 3px
@@ -297,9 +304,8 @@ form
 	width: 450px
 	height: 450px
 	left: auto
-	background-color: #000000
+	background-color: rgba(0, 0, 0, 0.7)
 	border-radius: 50%
-	opacity: 0.8
 	img.close-stock
 		cursor: pointer
 	h2
@@ -310,6 +316,5 @@ form
 		font-size: 20px
 		letter-spacing: 2px
 		line-height: 25px
-
 
 @import "media"
