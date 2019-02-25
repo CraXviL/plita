@@ -15,7 +15,8 @@ $(document).ready(function() {
 		calcBlockHeight() {
 			this.heightTopPart = parseInt($('#header-carousel').css('height'), 10) -
 											this.offset;
-			this.heightAboutBlock = parseInt($('#block-about').css('height'), 10) -
+			this.heightAboutBlock = parseInt($('#block-about').css('height'), 10) +
+											parseInt($('#gallery-carousel').css('height'), 10) -
 											this.offset;
 			this.heightMiddlePart = parseInt($('#block-menu').css('height'), 10) +
 											parseInt($('#block-video').css('height'), 10) -
@@ -95,12 +96,12 @@ $(document).ready(function() {
 			.siblings('button').fadeIn(1500).siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
 
-	window.setTimeout(function() {
-		$('#stock-popup').animate({bottom: '30%'});
-		$('img.close-stock').on('click', function() {
-			$('#stock-popup').animate({bottom: -500});
-		});
-	}, 5000);
+	// window.setTimeout(function() {
+	// 	$('#stock-popup').animate({bottom: '30%'});
+	// 	$('img.close-stock').on('click', function() {
+	// 		$('#stock-popup').animate({bottom: -500});
+	// 	});
+	// }, 5000);
 
 	$('form').submit((e) => {
 		e.preventDefault();

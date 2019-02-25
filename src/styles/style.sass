@@ -65,13 +65,11 @@ h3
 
 header
 	transition: all .5s ease
-	a.navbar-brand
-		padding: 35px 5px
-		&:hover
-			transform: scale(1.05)
+	a.navbar-brand:hover
+		transform: scale(1.05)
 	.navbar-toggler
 		width: 20%
-		padding: 50px
+		padding: 60px
 		.navbar-toggler-icon
 			background: url('../img/svg/menu.svg')
 	#navbarNav
@@ -114,7 +112,7 @@ header
 				opacity: 1
 	.carousel-control-next, .carousel-control-prev
 		width: 100px
-		margin-top: -15px
+		margin-top: -17px
 		position: relative
 		opacity: .7
 		&:hover
@@ -126,7 +124,7 @@ header
 		transform: rotate(180deg)
 
 .description
-	bottom: 120px
+	bottom: 130px
 	width: 555px
 	height: 126px
 	text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)
@@ -183,7 +181,7 @@ header
 		margin-bottom: 35px
 		color: $accent
 	.stock-item
-		flex: 360px 1 0
+		flex: 350px 1 0
 		padding: 30px
 		position: relative
 		background-color: $accent
@@ -297,7 +295,6 @@ form
 #stock-popup
 	bottom: -500px
 	width: 450px
-	max-width: 100%
 	height: 450px
 	left: auto
 	background-color: #000000

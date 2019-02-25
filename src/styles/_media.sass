@@ -11,6 +11,13 @@
 // ≥992px
 +media-breakpoint-down(md)
 
+	header
+		nav.navbar
+			height: 22vh
+			flex-wrap: wrap
+			a.navbar-brand
+				transform: scale(1.2)
+
 	#header-carousel .carousel-indicators li
 		width: 60px
 
@@ -45,8 +52,6 @@
 		background-size: 300%
 		@media (orientation: landscape)
 			background-size: 150%
-		a.navbar-brand
-			padding: 0 100px
 		nav.navbar
 			height: 100vh
 			align-items: baseline
@@ -55,26 +60,7 @@
 			.phone
 				color: white
 				left: auto
-			ul.navbar-nav
-				top: -50px
-				bottom: -50px
-				left: -50px
-				right: -50px
-				padding: 200px 0
-				position: fixed
-				background-color: rgba(0,0,0, .7)
-				@media (orientation: landscape)
-					padding: 150px
-				li.nav-item
-					margin: 0 auto
-					border: 0
-					a.nav-link
-						font-size: 25px
-						letter-spacing: .29em
-		.btn-order
-			margin-bottom: 10%
-			flex-grow: 1
-			align-self: flex-end
+
 
 	.carousel-indicators
 		bottom: -50px
@@ -131,6 +117,9 @@
 
 	footer
 		font-size: 14px
+
+	#stock-popup
+		transform: scale(.7)
 
 // ≥576px
 +media-breakpoint-down(xs)
