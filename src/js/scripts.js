@@ -79,7 +79,7 @@ $(document).ready(function() {
 	});
 
 	$('button.btn-order').on('click', function() {
-		$('#block-order').show(500);
+		$('#block-order').show(500).css({display: 'flex'});
 		$('img.close-form').on('click', function() {
 			$('#block-order').hide(500);
 		});
@@ -96,7 +96,7 @@ $(document).ready(function() {
 	});
 
 	window.setTimeout(function() {
-		$('#stock-popup').animate({bottom: 0});
+		$('#stock-popup').animate({bottom: '30%'});
 		$('img.close-stock').on('click', function() {
 			$('#stock-popup').animate({bottom: -500});
 		});
