@@ -8,7 +8,7 @@ import '../styles/style.sass';
 
 $(document).ready(function() {
 	
-	var blockHeights = {
+	let blockHeights = {
 		heightTopPart: 0,
 		heightAboutBlock: 0,
 		heightMiddlePart: 0,
@@ -98,17 +98,26 @@ $(document).ready(function() {
 			.siblings('button').fadeIn(1500).siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
 
+	window.setTimeout(function() {
+		$('#stock-popup').animate({bottom: '30%'});
+		$('img.close-stock').on('click', function() {
+			$('#stock-popup').animate({bottom: -500});
+		});
+	}, 15000);
+
+/* YouTube & Instagram */
+
 	(function loadPlayer() {
-		var tag = document.createElement('script');
+		let tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
+		let firstScriptTag = document.getElementsByTagName('script')[0];
 		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 		window.onYouTubePlayerAPIReady = function() {
 			onYouTubePlayer();
 		};
 	})();
 
-var player;
+let player;
 
 function onYouTubePlayer() {
 	player = new YT.Player('player', {
@@ -126,14 +135,13 @@ function onYouTubePlayer() {
 	function onPlayerReady(event) {
 		$(document).onDelay('scroll', function() {
 			if (window.scrollY > blockHeights.heightTopPart) {
-				console.log(window.scrollY);
 				event.target.playVideo();
 				event.target.mute();
 			}
 		});
 	}
 
-	var done = false;
+	let done = false;
 	function onPlayerStateChange(event) {
 		if (event.data == YT.PlayerState.ENDED && !done) {
 			window.setTimeout(player.playVideo(), 6000);
@@ -141,12 +149,21 @@ function onYouTubePlayer() {
 		}
 	}
 
-	window.setTimeout(function() {
-		$('#stock-popup').animate({bottom: '30%'});
-		$('img.close-stock').on('click', function() {
-			$('#stock-popup').animate({bottom: -500});
-		});
-	}, 15000);
+	function onInstagram() {
+	  let feed = new Instafeed({
+	    get: 'user',
+	    userId: '5589909082',
+	    clientId: '024127100f2442ef85b03306948fdc3d',
+	    template: '<a href="{{link}}"><img src="{{image}}" alt="{{image}}" /></a>',
+	    links: true,
+	    limit: 4,
+	    resolution: 'low_resolution'
+	  });
+	  console.log(feed);
+	  feed.run();
+	}
+
+	/* form sending */
 
 	$('form').submit((e) => {
 		e.preventDefault();
