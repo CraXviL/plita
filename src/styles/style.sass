@@ -13,6 +13,9 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
+	
+iframe
+	border: none
 
 b, strong
 	font-family: "Bebas Neue Bold"
@@ -208,7 +211,7 @@ header
 		bottom: 100px
 		color: inherit
 		font-size: 17px
-		border: 0
+		border: none
 		letter-spacing: 2px
 		text-decoration: underline
 	.stock-item:first-child .stock-item-text, .stock-item:last-child .stock-item-text__more
@@ -221,11 +224,6 @@ header
 		font-size: 42px
 		letter-spacing: 4px
 		text-transform: uppercase
-	.photoes 
-		max-width: 720px
-		img
-			max-width: 50%
-			margin: -1px
 
 #block-contacts
 	margin-top: 120px
@@ -249,7 +247,6 @@ a.socials-link
 	opacity: .7
 	&:hover
 		opacity: 1
-
 
 footer
 	padding-top: 75px !important
@@ -286,7 +283,7 @@ form
 	input:not([type="submit"])
 		height: 60px
 		background-color: transparent
-		border: 0
+		border: none
 		border-bottom: $thin-border
 	input:focus
 		border-bottom: $thick-border
