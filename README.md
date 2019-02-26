@@ -1,2 +1,2 @@
 # plita
-https://craxvil.github.io/plita/
+https://plitarest.ru/
