@@ -244,10 +244,11 @@ header
 	ul.socials-list
 		width: 230px
 		margin-top: -5px
-		li.socials-item
-			opacity: .7
-			&:hover
-				opacity: 1
+
+a.socials-link
+	opacity: .7
+	&:hover
+		opacity: 1
 
 
 footer
@@ -267,7 +268,8 @@ form
 	width: 500px
 	max-width: 100%
 	padding: 15px
-	transition: all .5s ease
+	&>*
+		transition: all .5s ease
 	img.close-form
 		margin-right: -450px
 		cursor: pointer
@@ -286,14 +288,23 @@ form
 		background-color: transparent
 		border: 0
 		border-bottom: $thin-border
-	input[type="submit"]
-		margin: 50px 0 25px 0
 	input:focus
 		border-bottom: $thick-border
+		transition: all .1s ease
+	input.error
+		border-bottom: $thin-border__red
+	input.valid
+		border-bottom: $thin-border__green
+	input::selection
+		background-color: $text
+		color: $accent
 	p
 		font-size: 17px
 		letter-spacing: 3px
-		line-height: 24px
+		line-height: 50px
+		&.message
+			opacity: 0
+
 	h3
 		font-size: 30px
 		letter-spacing: 3px

@@ -1,4 +1,6 @@
+/* global YT */
 import 'jquery';
+import 'html5shiv';
 import './delayEvent.jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -122,20 +124,21 @@ function onYouTubePlayer() {
 }
 
 	function onPlayerReady(event) {
-		event.target.playVideo();
-		event.target.mute();
+		$(document).onDelay('scroll', function() {
+			if (window.scrollY > blockHeights.heightTopPart) {
+				console.log(window.scrollY);
+				event.target.playVideo();
+				event.target.mute();
+			}
+		});
 	}
 
 	var done = false;
 	function onPlayerStateChange(event) {
 		if (event.data == YT.PlayerState.ENDED && !done) {
-			setTimeout(player.playVideo(), 6000);
+			window.setTimeout(player.playVideo(), 6000);
 			done = true;
 		}
-	}
-
-	function playVideo() {
-		player.playVideo();
 	}
 
 	window.setTimeout(function() {
@@ -161,24 +164,35 @@ function onYouTubePlayer() {
 		$('form input').hide();
 		$('form h3').hide();
 		$('form h2').text('СООБЩЕНИЕ ОТПРАВЛЕНО');
-		$('form p').text('МЫ свяжемся с вами для подтверждения бронирования');
+		$('form p.orCall').text('Мы свяжемся с вами для подтверждения бронирования');
 	});
 
+	$('input').on('input', (e) => {
+		validate(e, /^.+$/gi);
+	});
 	$('input[name="name"]').on('input', (e) => {
 		validate(e, /^[ а-яё]+$/gi);
 	});
 	$('input[name="tel"]').on('input', (e) => {
 		validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
 	});
-	$('input[name="email"]').on('input', (e) => {
-		validate(e, /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/);
-	});
 
+	let error = false;
 	function validate(e, regExp) {
 		if (!regExp.test(e.target.value.trim())) {
 			$(e.target).addClass('error');
+			$(e.target).removeClass('valid');
+			if (!error) {
+				error = true;
+				$('form p.message').css({ opacity: 1 });
+			}
 		} else {
+			if (error) {
+				error = false;
+				$('form p.message').css({ opacity: 0 });
+			}
 			$(e.target).removeClass('error');
+			$(e.target).addClass('valid');
 		}
 	}
 
