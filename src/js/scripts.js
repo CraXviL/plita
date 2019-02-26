@@ -105,7 +105,7 @@ $(document).ready(function() {
 		});
 	}, 15000);
 
-/* YouTube & Instagram */
+/* YouTube */
 
 	(function loadPlayer() {
 		let tag = document.createElement('script');
@@ -147,20 +147,6 @@ function onYouTubePlayer() {
 			window.setTimeout(player.playVideo(), 6000);
 			done = true;
 		}
-	}
-
-	function onInstagram() {
-	  let feed = new Instafeed({
-	    get: 'user',
-	    userId: '5589909082',
-	    clientId: '024127100f2442ef85b03306948fdc3d',
-	    template: '<a href="{{link}}"><img src="{{image}}" alt="{{image}}" /></a>',
-	    links: true,
-	    limit: 4,
-	    resolution: 'low_resolution'
-	  });
-	  console.log(feed);
-	  feed.run();
 	}
 
 	/* form sending */
