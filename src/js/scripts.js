@@ -22,16 +22,18 @@ $(document).ready(function() {
 											this.offset;
 			this.heightMiddlePart = parseInt($('#block-menu').css('height'), 10) +
 											parseInt($('#block-video').css('height'), 10) -
-											this.offset;
+											this.offset + 200;
 			this.heightBottomPart = parseInt($('#block-stock').css('height'), 10) +
 											parseInt($('#block-photoes').css('height'), 10) -
 											this.offset;
 		}
 	};
 
-	blockHeights.calcBlockHeight();
+	window.setTimeout(() => {
+		blockHeights.calcBlockHeight();
+		$(window).resize(() => blockHeights.calcBlockHeight());
+	}, 500);
 
-	$(window).resize(() => blockHeights.calcBlockHeight());
 
 	$('.navbar-nav a').on('click', (e) => {
 		e.preventDefault();
@@ -42,23 +44,20 @@ $(document).ready(function() {
 			break;
 			case 'menu-menu':
 				$('html').animate({ scrollTop: blockHeights.heightTopPart +
-																				blockHeights.heightAboutBlock
-																				});
+																				blockHeights.heightAboutBlock });
 				window.location = '#block-menu';
 			break;
 			case 'menu-stock':
 				$('html').animate({ scrollTop: blockHeights.heightTopPart +
 																				blockHeights.heightAboutBlock +
-																				blockHeights.heightMiddlePart +
-																				200 });
+																				blockHeights.heightMiddlePart });
 				window.location = '#block-stock';
 			break;
 			case 'menu-contacts':
 				$('html').animate({ scrollTop: blockHeights.heightTopPart +
 																				blockHeights.heightAboutBlock +
 																				blockHeights.heightMiddlePart +
-																				blockHeights.heightBottomPart +
-																				200 });
+																				blockHeights.heightBottomPart });
 				window.location = '#block-contacts';
 			break;
 		}
@@ -88,20 +87,20 @@ $(document).ready(function() {
 		});
 	});
 
-	$('.btn-more').on('click', function() {
+	$('button.btn-more').on('click', function() {
 		$(this).fadeOut().siblings('*:not(img.close-more)').animate({ opacity: 0})
 			.siblings('.stock-item-text__more').animate({ opacity: 1})
 			.siblings('img.close-more').fadeIn();
 	});
-	$('.stock-item img.close-more').on('click', function() {
+	$('img.close-more').on('click', function() {
 		$(this).fadeOut().siblings('*:not(button)').animate({ opacity: 0})
 			.siblings('button').fadeIn(1500).siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
 
 	window.setTimeout(function() {
-		$('#stock-popup').animate({bottom: '30%'});
+		$('#stock-popup').addClass('showed');
 		$('img.close-stock').on('click', function() {
-			$('#stock-popup').animate({bottom: -500});
+			$('#stock-popup').removeClass('showed');
 		});
 	}, 15000);
 
@@ -153,21 +152,27 @@ function onYouTubePlayer() {
 
 	$('form').submit((e) => {
 		e.preventDefault();
-		$.ajax({
-			url: 'sendmail.php',
-			type: 'POST',
-			data: $('form').serialize(),
-			success: function () {
-				console.log('Запрос отправлен');
-			},
-			error: function () {
-				console.log('Возникла ошибка при отправке');
-			}
-		});
-		$('form input').hide();
-		$('form h3').hide();
-		$('form h2').text('СООБЩЕНИЕ ОТПРАВЛЕНО');
-		$('form p.orCall').text('Мы свяжемся с вами для подтверждения бронирования');
+		if (!error) {
+			$.ajax({
+				url: 'sendmail.php',
+				type: 'POST',
+				data: $('form').serialize(),
+				success: function () {
+					console.log('Запрос отправлен');
+				},
+				error: function () {
+					console.log('Возникла ошибка при отправке');
+				}
+			});
+			$('form input').hide();
+			$('form h3').hide();
+			$('form h2').text('СООБЩЕНИЕ ОТПРАВЛЕНО');
+			$('form p.orCall').text('Мы свяжемся с вами для подтверждения бронирования');
+		} else {
+			$('input[name="name"]').addClass('error');
+			$('input[name="tel"]').addClass('error');
+			$('form p.message').css({ opacity: 1 });
+		}
 	});
 
 	$('input').on('input', (e) => {
@@ -180,7 +185,7 @@ function onYouTubePlayer() {
 		validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
 	});
 
-	let error = false;
+	let error = true;
 	function validate(e, regExp) {
 		if (!regExp.test(e.target.value.trim())) {
 			$(e.target).addClass('error');

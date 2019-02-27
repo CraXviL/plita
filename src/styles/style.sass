@@ -70,11 +70,12 @@ header
 	transition: all .5s ease
 	a.navbar-brand:hover
 		transform: scale(1.05)
-	.navbar-toggler
-		width: 20%
-		padding: 60px
-		.navbar-toggler-icon
-			background: url('../img/svg/menu.svg')
+	.navbar-toggler-icon
+		background: url('../img/svg/menu.svg')
+	.navbar-toggler, .phone
+		padding: 50px 25px
+	.phone
+		left: auto
 	img.close-menu
 		display: none
 		cursor: pointer
@@ -151,11 +152,11 @@ header
 		h2
 			width: 350px
 			margin: 120px 0 0 0
-			padding: 45px 0 27px
+			padding: 55px 0 40px
 			border-bottom: 3px solid $accent
 		.block-about-text
 			width: 470px
-			margin: 45px 0
+			margin: 55px 0
 			font-family: inherit
 			font-size: 20px
 			line-height: 25px
@@ -244,12 +245,11 @@ header
 		margin-top: -5px
 
 a.socials-link
-	opacity: .7
+	opacity: .8
 	&:hover
 		opacity: 1
 
 footer
-	padding-top: 75px !important
 	font-family: $default-font
 	font-size: 20px
 	letter-spacing: .13em
@@ -313,6 +313,9 @@ form
 	left: auto
 	background-color: rgba(0, 0, 0, 0.7)
 	border-radius: 50%
+	transition: bottom 1s ease
+	&.showed
+		bottom: 20%
 	img.close-stock
 		cursor: pointer
 	h2

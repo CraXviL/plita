@@ -12,7 +12,7 @@
 			"\r\nПОЖЕЛАНИЯ ПО СТОЛУ: ".$_POST["wish"]);
 		$subject = "=?utf-8?B?".base64_encode($subject)."?=";
 		$headers = "From: $from\r\nReply-to: $from\r\nContent-type: text/plain; charset=utf-8\r\n";
-		if (strlen($message) > 3) {
+		if (strlen($_POST["name"].$_POST["tel"]) > 0) {
 			mail($to, $subject, $message, $headers);
 			echo('Заявка отправлена!');
 		} else {

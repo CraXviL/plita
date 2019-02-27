@@ -36,9 +36,6 @@
 +media-breakpoint-down(sm)
 
 	form
-		margin: 0
-		img.close-form
-			margin: 40px 0 0 0
 		h2
 			font-size: 35px
 			letter-spacing: .14em
@@ -56,10 +53,6 @@
 			background-size: 150%
 		nav.navbar
 			height: 100vh
-			.navbar-toggler, .phone
-				padding: 47px 20px
-			.phone
-				left: auto
 			.btn-order
 				width: 100%
 				flex: 40px 0 0
@@ -69,19 +62,19 @@
 				bottom: -50px
 				left: -50px
 				right: -50px
-				padding: 150px 0
+				padding: 200px 0
 				position: fixed
-				background-color: rgba(0,0,0, .8)
+				background-color: rgba(0,0,0, .9)
 				@media (orientation: landscape)
 					padding: 100px
 				li.nav-item
 					margin: 0 auto
-					border: 0
+					border: none
 					&:hover
 						font-family: "Bebas Neue Bold"
 					a.nav-link
 						font-size: 25px
-						letter-spacing: .29em
+						letter-spacing: .3em
 
 	.carousel-indicators
 		bottom: -50px
@@ -140,8 +133,10 @@
 		font-size: 14px
 
 	#stock-popup
+		left: -40px
 		transform: scale(.7)
-
+		&.showed
+			bottom: 0
 // ≥576px
 +media-breakpoint-down(xs)
 
