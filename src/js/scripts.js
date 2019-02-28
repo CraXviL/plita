@@ -152,7 +152,7 @@ function onYouTubePlayer() {
 
 	$('form').submit((e) => {
 		e.preventDefault();
-		if (!error) {
+		if ( validinputs.name === true && validinputs.tel === true ) {
 			$.ajax({
 				url: 'sendmail.php',
 				type: 'POST',
@@ -175,19 +175,22 @@ function onYouTubePlayer() {
 		}
 	});
 
+	let validinputs = { name: true, tel: true };
 	$('input').on('input', (e) => {
 		validate(e, /^.+$/gi);
 	});
 	$('input[name="name"]').on('input', (e) => {
-		validate(e, /^[ а-яё]+$/gi);
+		validinputs.name = validate(e, /^[ а-яё]+$/gi);
+		console.log(validinputs);
 	});
 	$('input[name="tel"]').on('input', (e) => {
-		validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
+		validinputs.tel = validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
+		console.log(validinputs);
 	});
 
-	let error = true;
-	function validate(e, regExp) {
-		if (!regExp.test(e.target.value.trim())) {
+	function validate(e, pattern) {
+		let error = true;
+		if (!pattern.test(e.target.value.trim())) {
 			$(e.target).addClass('error');
 			$(e.target).removeClass('valid');
 			if (!error) {
@@ -195,13 +198,14 @@ function onYouTubePlayer() {
 				$('form p.message').css({ opacity: 1 });
 			}
 		} else {
+			$(e.target).removeClass('error');
+			$(e.target).addClass('valid');
 			if (error) {
 				error = false;
 				$('form p.message').css({ opacity: 0 });
 			}
-			$(e.target).removeClass('error');
-			$(e.target).addClass('valid');
 		}
+		return !error;
 	}
 
 });
