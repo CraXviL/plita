@@ -16,7 +16,7 @@ $(document).ready(function() {
 	});
 
 	$(document).onDelay('scroll', function() {
-		if (window.scrollY > 5) 
+		if (window.pageYOffset > 5) 
 			$('header').css({ 'background-color': 'rgba(0, 0, 0, 0.5)' });
 		else {
 			$('header').css({ 'background-color': 'transparent' });
@@ -49,12 +49,12 @@ $(document).ready(function() {
 			.siblings('button').fadeIn(1500).siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
 
-	window.setTimeout(function() {
-		$('#stock-popup').addClass('showed');
-		$('img.close-stock').on('click', function() {
-			$('#stock-popup').removeClass('showed');
-		});
-	}, 15000);
+	// window.setTimeout(function() {
+	// 	$('#stock-popup').addClass('showed');
+	// 	$('img.close-stock').on('click', function() {
+	// 		$('#stock-popup').removeClass('showed');
+	// 	});
+	// }, 15000);
 
 /* YouTube */
 
@@ -74,7 +74,7 @@ function onYouTubePlayer() {
 	player = new YT.Player('player', {
 		height: '810',
 		width: '1440',
-		videoId: 'k2XGBQkAz-E',
+		videoId: 'zoDmuAsPxfE',
 		playerVars: { 'showinfo': 0, 'rel': 0 },
 		events: {
 			'onReady': onPlayerReady,
@@ -85,7 +85,7 @@ function onYouTubePlayer() {
 
 	function onPlayerReady(event) {
 		$(document).onDelay('scroll', function() {
-			if (window.scrollY > 1000) {
+			if (window.pageYOffset > 1000) {
 				event.target.playVideo();
 				event.target.mute();
 			}
@@ -104,10 +104,12 @@ function onYouTubePlayer() {
 
 	const validInputs = {
 		name: {
-			valid: true
+			pattern: /^[ а-яё]{2,}$/gi,
+			valid: false
 		},
 		tel: {
-			valid: true 
+			pattern: /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/,
+			valid: false
 		}
 	};
 
@@ -115,7 +117,7 @@ function onYouTubePlayer() {
 		e.preventDefault();
 		let inputCnt = 0, validCnt = 0;
 		for ( let elem in validInputs) {
-			inputCnt += (validInputs[elem] ? 1 : 0);
+			inputCnt ++;
 			validCnt += (validInputs[elem].valid ? 1 : 0);
 			console.log(elem, validInputs[elem].valid, validCnt, inputCnt);
 		}
@@ -136,42 +138,37 @@ function onYouTubePlayer() {
 			$('form h2').text('СООБЩЕНИЕ ОТПРАВЛЕНО');
 			$('form p.orCall').text('Мы свяжемся с вами для подтверждения бронирования');
 		} else {
-			callValidate();
+			runValidate('name');
+			runValidate('tel');
 		}
 	});
 
-	(function callValidate() {
-		$('input').on('input', (e) => {
-			validate(e, /^.+$/gi);
-		});
-		$('input[name="name"]').on('input', (e) => {
-			validInputs.name.valid = validate(e, /^[ а-яё]+$/gi);
-			console.log(validInputs);
-		});
-		$('input[name="tel"]').on('input', (e) => {
-			validInputs.tel.valid = validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
-			console.log(validInputs);
-		});
+	(function() {
+		for (let elem in validInputs) {
+			$('input[name="' + elem + '"]').on('input', () => runValidate(elem));
+		}
 	})();
 
-	function validate(e, pattern) {
-		let error = true;
-		if (!pattern.test(e.target.value.trim())) {
-			$(e.target).addClass('error');
-			$(e.target).removeClass('valid');
-			if (!error) {
-				error = true;
-				$('form p.message').css({ opacity: 1 });
-			}
+	function runValidate(inputName) {
+		let pattern = validInputs[inputName].pattern;
+		let $target = $('input[name="' + inputName + '"]');
+		let value = $target[0].value.trim();
+		console.log(pattern, $target, value);
+		validInputs[inputName].valid = pattern.test(value);
+		let error = !validInputs[inputName].valid;
+		showError($target, error);
+	}
+
+	function showError($target, error) {
+		if ( error ) {
+			$target.addClass('error');
+			$target.removeClass('valid');
+			$('form p.message').css({ opacity: 1 });
 		} else {
-			$(e.target).removeClass('error');
-			$(e.target).addClass('valid');
-			if (error) {
-				error = false;
-				$('form p.message').css({ opacity: 0 });
-			}
+			$target.removeClass('error');
+			$target.addClass('valid');
+			$('form p.message').css({ opacity: 0 });
 		}
-		return !error;
 	}
 
 });
