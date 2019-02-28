@@ -7,60 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/style.sass';
 
 $(document).ready(function() {
-	
-	let blockHeights = {
-		heightTopPart: 0,
-		heightAboutBlock: 0,
-		heightMiddlePart: 0,
-		heightBottomPart: 0,
-		offset: 0,
-		calcBlockHeight() {
-			this.heightTopPart = parseInt($('#header-carousel').css('height'), 10) -
-											this.offset;
-			this.heightAboutBlock = parseInt($('#block-about').css('height'), 10) +
-											parseInt($('#gallery-carousel').css('height'), 10) -
-											this.offset;
-			this.heightMiddlePart = parseInt($('#block-menu').css('height'), 10) +
-											parseInt($('#block-video').css('height'), 10) -
-											this.offset + 200;
-			this.heightBottomPart = parseInt($('#block-stock').css('height'), 10) +
-											parseInt($('#block-photoes').css('height'), 10) -
-											this.offset;
-		}
-	};
-
-	window.setTimeout(() => {
-		blockHeights.calcBlockHeight();
-		$(window).resize(() => blockHeights.calcBlockHeight());
-	}, 500);
-
 
 	$('.navbar-nav a').on('click', (e) => {
 		e.preventDefault();
-		switch (e.target.id) {
-			case 'menu-about':
-				$('html').animate({ scrollTop: blockHeights.heightTopPart });
-				window.location = '#block-about';
-			break;
-			case 'menu-menu':
-				$('html').animate({ scrollTop: blockHeights.heightTopPart +
-																				blockHeights.heightAboutBlock });
-				window.location = '#block-menu';
-			break;
-			case 'menu-stock':
-				$('html').animate({ scrollTop: blockHeights.heightTopPart +
-																				blockHeights.heightAboutBlock +
-																				blockHeights.heightMiddlePart });
-				window.location = '#block-stock';
-			break;
-			case 'menu-contacts':
-				$('html').animate({ scrollTop: blockHeights.heightTopPart +
-																				blockHeights.heightAboutBlock +
-																				blockHeights.heightMiddlePart +
-																				blockHeights.heightBottomPart });
-				window.location = '#block-contacts';
-			break;
-		}
+		let target = e.target.getAttribute('href');
+		$('html, body').animate({ scrollTop: $(target).offset().top - 200 });
+		window.location = target;
 	});
 
 	$(document).onDelay('scroll', function() {
@@ -133,7 +85,7 @@ function onYouTubePlayer() {
 
 	function onPlayerReady(event) {
 		$(document).onDelay('scroll', function() {
-			if (window.scrollY > blockHeights.heightTopPart) {
+			if (window.scrollY > 1000) {
 				event.target.playVideo();
 				event.target.mute();
 			}
@@ -150,9 +102,24 @@ function onYouTubePlayer() {
 
 	/* form sending */
 
+	const validInputs = {
+		name: {
+			valid: true
+		},
+		tel: {
+			valid: true 
+		}
+	};
+
 	$('form').submit((e) => {
 		e.preventDefault();
-		if ( validinputs.name === true && validinputs.tel === true ) {
+		let inputCnt = 0, validCnt = 0;
+		for ( let elem in validInputs) {
+			inputCnt += (validInputs[elem] ? 1 : 0);
+			validCnt += (validInputs[elem].valid ? 1 : 0);
+			console.log(elem, validInputs[elem].valid, validCnt, inputCnt);
+		}
+		if ( validCnt === inputCnt ) {
 			$.ajax({
 				url: 'sendmail.php',
 				type: 'POST',
@@ -169,24 +136,23 @@ function onYouTubePlayer() {
 			$('form h2').text('СООБЩЕНИЕ ОТПРАВЛЕНО');
 			$('form p.orCall').text('Мы свяжемся с вами для подтверждения бронирования');
 		} else {
-			$('input[name="name"]').addClass('error');
-			$('input[name="tel"]').addClass('error');
-			$('form p.message').css({ opacity: 1 });
+			callValidate();
 		}
 	});
 
-	let validinputs = { name: true, tel: true };
-	$('input').on('input', (e) => {
-		validate(e, /^.+$/gi);
-	});
-	$('input[name="name"]').on('input', (e) => {
-		validinputs.name = validate(e, /^[ а-яё]+$/gi);
-		console.log(validinputs);
-	});
-	$('input[name="tel"]').on('input', (e) => {
-		validinputs.tel = validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
-		console.log(validinputs);
-	});
+	(function callValidate() {
+		$('input').on('input', (e) => {
+			validate(e, /^.+$/gi);
+		});
+		$('input[name="name"]').on('input', (e) => {
+			validInputs.name.valid = validate(e, /^[ а-яё]+$/gi);
+			console.log(validInputs);
+		});
+		$('input[name="tel"]').on('input', (e) => {
+			validInputs.tel.valid = validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
+			console.log(validInputs);
+		});
+	})();
 
 	function validate(e, pattern) {
 		let error = true;
