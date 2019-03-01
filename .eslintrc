@@ -16,6 +16,6 @@
     "plugins": [
     ],
     "rules": {
-        "no-console": "off"
+        "no-console": 1
     }
 }
