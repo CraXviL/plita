@@ -49,12 +49,12 @@ $(document).ready(function() {
 			.siblings('button').fadeIn(1500).siblings('*:not(.stock-item-text__more)').animate({ opacity: 1});
 	});
 
-	// window.setTimeout(function() {
-	// 	$('#stock-popup').addClass('showed');
-	// 	$('img.close-stock').on('click', function() {
-	// 		$('#stock-popup').removeClass('showed');
-	// 	});
-	// }, 15000);
+	window.setTimeout(function() {
+		$('#stock-popup').addClass('showed');
+		$('img.close-stock').on('click', function() {
+			$('#stock-popup').removeClass('showed');
+		});
+	}, 15000);
 
 /* YouTube */
 
@@ -102,7 +102,7 @@ function onYouTubePlayer() {
 
 	/* form sending */
 
-	const validInputs = {
+	const inputsList = {
 		name: {
 			pattern: /^[ а-яё]{2,}$/gi,
 			valid: false
@@ -113,13 +113,42 @@ function onYouTubePlayer() {
 		}
 	};
 
+	(function() {
+		for (let elem in inputsList) {
+			$('input[name="' + elem + '"]').on('input', () => runValidate(elem));
+		}
+	})();
+
+	function runValidate(inputName) {
+		let pattern = inputsList[inputName].pattern;
+		let $target = $('input[name="' + inputName + '"]');
+		let value = $target.val().trim();
+		inputsList[inputName].valid = pattern.test(value);
+		let error = !inputsList[inputName].valid;
+		console.log(pattern, value, pattern.test(value), error);
+		showError($target, error);
+	}
+
+	function showError($target, error) {
+		console.log($target, error);
+		if ( error ) {
+			$target.addClass('error');
+			$target.removeClass('valid');
+			$('form p.message').css({ opacity: 1 });
+		} else {
+			$target.removeClass('error');
+			$target.addClass('valid');
+			$('form p.message').css({ opacity: 0 });
+		}
+	}
+
 	$('form').submit((e) => {
 		e.preventDefault();
 		let inputCnt = 0, validCnt = 0;
-		for ( let elem in validInputs) {
+		for ( let elem in inputsList) {
 			inputCnt ++;
-			validCnt += (validInputs[elem].valid ? 1 : 0);
-			console.log(elem, validInputs[elem].valid, validCnt, inputCnt);
+			validCnt += (inputsList[elem].valid ? 1 : 0);
+			console.log(elem, inputsList[elem].valid, validCnt, inputCnt);
 		}
 		if ( validCnt === inputCnt ) {
 			$.ajax({
@@ -142,33 +171,5 @@ function onYouTubePlayer() {
 			runValidate('tel');
 		}
 	});
-
-	(function() {
-		for (let elem in validInputs) {
-			$('input[name="' + elem + '"]').on('input', () => runValidate(elem));
-		}
-	})();
-
-	function runValidate(inputName) {
-		let pattern = validInputs[inputName].pattern;
-		let $target = $('input[name="' + inputName + '"]');
-		let value = $target[0].value.trim();
-		console.log(pattern, $target, value);
-		validInputs[inputName].valid = pattern.test(value);
-		let error = !validInputs[inputName].valid;
-		showError($target, error);
-	}
-
-	function showError($target, error) {
-		if ( error ) {
-			$target.addClass('error');
-			$target.removeClass('valid');
-			$('form p.message').css({ opacity: 1 });
-		} else {
-			$target.removeClass('error');
-			$target.addClass('valid');
-			$('form p.message').css({ opacity: 0 });
-		}
-	}
 
 });
