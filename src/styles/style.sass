@@ -49,6 +49,12 @@ h3
 	max-width: $max-width
 	margin: 0 auto
 
+.content-center
+	display: flex
+	justify-content: center
+	text-align: center
+	align-items: center
+
 .space
 	height: 19px
 
@@ -192,35 +198,35 @@ header
 		padding: 30px
 		position: relative
 		background-color: $accent
-	img
-		max-width: 100%
-	.stock-item-text
-		width: 265px
-		font-size: 25px
-		letter-spacing: 3px
-		line-height: 30px
-	img.close-more
-		top: 20px
-		right: 20px
-		width: 17px
-		height: 17px
-		display: none
-		cursor: pointer
-	.stock-item-text__more
-		width: 325px
-		font-size: 17px
-		letter-spacing: 2px
-		line-height: 23px
-		opacity: 0
-		a
+		img
+			max-width: 100%
+		.stock-item-text
+			width: 265px
+			font-size: 25px
+			letter-spacing: 3px
+			line-height: 30px
+		img.close-more
+			top: 20px
+			right: 20px
+			width: 17px
+			height: 17px
+			display: none
+			cursor: pointer
+		.stock-item-text__more
+			width: 325px
+			font-size: 17px
+			letter-spacing: 2px
+			line-height: 23px
+			opacity: 0
+			a
+				text-decoration: underline
+		.btn-more
+			bottom: 100px
+			color: inherit
+			font-size: 17px
+			border: none
+			letter-spacing: 2px
 			text-decoration: underline
-	.btn-more
-		bottom: 100px
-		color: inherit
-		font-size: 17px
-		border: none
-		letter-spacing: 2px
-		text-decoration: underline
 	.stock-item:first-child .stock-item-text, .stock-item:last-child .stock-item-text__more
 		width: 250px
 
