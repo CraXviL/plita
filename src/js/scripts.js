@@ -138,12 +138,14 @@ function onYouTubePlayer() {
 	})();
 
 	function runValidate(inputName) {
-		let pattern = inputsList[inputName].pattern;
-		let $target = $('input[name="' + inputName + '"]');
-		let value = $target.val().trim();
-		inputsList[inputName].valid = pattern.test(value);
-		let error = !inputsList[inputName].valid;
-		showError($target, error);
+		inputName.forEach((name) => {
+			let pattern = inputsList[name].pattern;
+			let $target = $('input[name="' + name + '"]');
+			let value = $target.val().trim();
+			inputsList[name].valid = pattern.test(value);
+			let error = !inputsList[name].valid;
+			showError($target, error);
+		});
 	}
 
 	function showError($target, error) {
@@ -182,8 +184,7 @@ function onYouTubePlayer() {
 			$('form h2').text('СООБЩЕНИЕ ОТПРАВЛЕНО');
 			$('form p.orCall').text('Мы свяжемся с вами для подтверждения бронирования');
 		} else {
-			runValidate('name');
-			runValidate('tel');
+			runValidate(['name', 'tel']);
 		}
 	});
 
