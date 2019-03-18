@@ -14,10 +14,11 @@
 
 	<meta property="og:title" content="Ресторан Plita"/>
 	<meta property="og:description" content="PLITA Restaurant & Bar — это про уют и тепло, про вкус и удовольствие, про атмосферу и эмоции."/>
-	<meta property="og:image" content="http://plitarest.ru/img/logo.png">
+	<meta property="og:image" content="https://plitarest.ru/img/photo-small-0.jpg">
 	<meta property="og:type" content="website"/>
 	<meta property="og:locale" content="ru_RU"/>
-	<meta property="og:url" content= "http://plitarest.ru" />
+	<meta property="fb:app_id" content="351416968915069">
+	<meta property="og:url" content= "https://plitarest.ru/" />
 
 <link href="style.css" rel="stylesheet"></head>
 
@@ -30,9 +31,9 @@
 			<input name="name" type="text" placeholder="ВАШЕ ИМЯ">
 			<input name="tel" type="tel" placeholder="НОМЕР ТЕЛЕФОНА">
 			<input name="date" type="text" placeholder="ДАТА И ВРЕМЯ">
-			<input name="count" type="text" placeholder="КОЛЛИЧЕСТВО ПЕРСОН">
+			<input name="count" type="text" placeholder="КОЛИЧЕСТВО ПЕРСОН">
 			<input name="wish" type="text" placeholder="ПОЖЕЛАНИЯ ПО СТОЛУ">
-			<p class="message"> заполните все поля правильно </p>
+			<p class="message"> заполните обязательные поля </p>
 			<input name="submit" class="btn btn-order" type="submit" value="ОТПРАВИТЬ">
 			<p class="orCall"> или позвоните по телефону </p>
 			<a href="tel:89119203242"><h3> +7 (911) 920-32-42 </h3></a>
@@ -61,8 +62,9 @@
 					<img src="img/phone.svg" alt="phone.svg">
 				</a>
 				<img class="close-menu fixed-top mt-5 mx-auto" src="img/close.png" alt="close.png">
-				<div class="collapse navbar-collapse mx-auto px-5 p-lg-0" id="navbarNav">
-					<ul class="navbar-nav justify-content-between w-100 my-5">
+				<div id="navbarNav" class="collapse navbar-collapse
+																		my-5 mx-auto px-5 p-lg-0">
+					<ul class="navbar-nav justify-content-between w-100">
 						<li class="nav-item">
 							<a href="#block-about" class="nav-link close-menu p-0">О НАС</a>
 						</li>
@@ -78,8 +80,9 @@
 					</ul>
 				</div>
 				<button class="btn btn-order order-3
-											my-4 mx-auto m-lg-0"
-											>забронировать стол</button>
+											mx-auto m-lg-0"
+											>забронировать стол
+				</button>
 			</nav>
 		</div>
 	</header>
@@ -116,8 +119,7 @@
 		<div class="carousel-footer container p-md-0">
 			<div class="description position-absolute d-none d-md-block">
 				<h1>PLITA Restaurant & Bar
-					<small>— это про уют и тепло,	про вкус и удовольствие,
-					про атмосферу и эмоции.</small>
+					<small>— это про уют и тепло,	про вкус и удовольствие, про атмосферу и эмоции.</small>
 				</h1>
 			</div>
 			<ol class="carousel-indicators">
@@ -151,10 +153,7 @@
 						<div class="space"></div>
 					<p>Почему <strong>plita</strong>?</p>
 						<div class="space"></div>
-					<p>Плита давно заменила печь и стала НЕЗАМЕНИМЫМ
-					атрибутом домашнЕГО уютА, ДУШЕВНЫХ СЕМЕйНЫХ
-					ПОСИДЕЛОК И ВКУСНЫХ БЛЮД. Именно поэтому ресторан
-					имеет такое название.</p>
+					<p>Плита давно заменила печь и стала незаменимым атрибутом домашнего уюта, душевных семейных посиделок и вкусных блюд. Именно поэтому ресторан имеет такое название.</p>
 						<div class="space"></div>
 					<p>Наше главное правило: <strong>тепло и вкусно.</strong></p>
 						<div class="space"></div>
@@ -162,8 +161,7 @@
 						<div class="space"></div>
 					<p><strong>Вкусно</strong> – потому что наши повара создают гастрономические шедевры с особой любовью и трепетом.</p>
 						<div class="space"></div>
-					<p>Эксперименты и безграничная преданность своему
-					делу — всё это про команду <strong>#plitarest.</strong></p>
+					<p>Эксперименты и безграничная преданность своему делу — всё это про команду <strong>#plitarest.</strong></p>
 				</div>
 			</div>
 		</div>
@@ -244,35 +242,35 @@
 			</div>
 			<div class="row">
 				<div class="col d-flex flex-wrap justify-content-center p-md-0">
-					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
+					<div class="stock-item content-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
 						<p class="stock-item-text position-absolute">в <strong>день рождения</strong> скидка <strong>10%</strong> и угощения</p>
 					</div>
-					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
+					<div class="stock-item content-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
 						<p class="stock-item-text position-absolute">На <strong>кофе с собой</strong> действует скидка <strong>20%</strong></p>
 					</div>
-					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
+					<div class="stock-item content-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
 						<p class="stock-item-text position-absolute">При предъявлении <strong>студенческого билета</strong> или <strong>карты ISIC</strong>, скидка <strong>10%</strong></p>
 					</div>
-					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
+					<div class="stock-item content-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
 						<p class="stock-item-text position-absolute">Если ваш смартфон украшает <strong>наклейка PLITA</strong>, то вы получаете скидку <strong>10%</strong></p>
 					</div>
-					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
+					<div class="stock-item content-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
 						<p class="stock-item-text position-absolute"><strong>программа ЛОЯЛЬНОСТИ</strong> ПОСТОЯННЫМ ГОСТЯМ</p>
 						<img class="close-more position-absolute" src="img/close.png" alt="close.png">
-						<p class="stock-item-text__more position-absolute"><strong>▫5% карта</strong> (white) выдаётся при заполнении анкеты Гостя, которую вы сможете найти во <a href="https://vk.com/plita_rest">Вконтакте</a>.
+						<p class="stock-item-text__more position-absolute"><strong>▪ 5% карта</strong> (white) выдаётся при заполнении анкеты Гостя, которую вы сможете найти во <a href="https://vk.com/plita_rest">Вконтакте</a>.
 						<br><br>
-						<strong>▪10% карта</strong> (black) — при наличии 
+						<strong><img src="img/black-square.png" alt="black-square.png">10% карта</strong> (black) — при наличии 
 						разового счёта на сумму от 10 000 рублей.
 						<br><br>
 						Скидка по дисконтной карте не действует на меню бизнес-ланча и не суммируется с другими скидками/акциями, действующими в ресторане.</p>
 						<button class="btn btn-more position-absolute">подробнее</button>
 					</div>
-					<div class="stock-item d-flex justify-content-center text-center align-items-center my-1 my-md-2 mx-auto mx-md-2">
+					<div class="stock-item content-center my-1 my-md-2 mx-auto mx-md-2">
 						<img src="img/around.png" alt="around.png">
 						<p class="stock-item-text position-absolute">получите <strong>комплимент</strong> от заведения за <strong>отзыв</strong></p>
 						<img class="close-more position-absolute" src="img/close.png" alt="close.png">

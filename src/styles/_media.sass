@@ -49,10 +49,10 @@
 
 	header
 		position: relative !important
-		background: url('../img/main/photo-2.jpg') no-repeat left -300px top
-		background-size: 300%
+		background: url('../img/main/bg-mobile.jpg') no-repeat top
+		background-size: cover
 		@media (orientation: landscape)
-			background-size: 150%
+			background-position: center
 		nav.navbar
 			height: 100vh
 			a.navbar-brand
@@ -106,8 +106,9 @@
 		height: auto
 		background: none
 		h2
+			width: 100% !important
 		.block-about-text
-			width: auto
+			width: 100%
 			margin-top: 30px
 			font-size: 16px
 			letter-spacing: .1em

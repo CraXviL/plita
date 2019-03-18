@@ -9,7 +9,7 @@ import '../styles/style.sass';
 $(document).ready(function() {
 	'use strict';
 
-	$('.navbar a').on('click', (e) => {
+	$('.navbar a:not(.phone)').on('click', (e) => {
 		e.preventDefault();
 		let target = e.currentTarget.getAttribute('href');
 		if (target.includes('#')) {
@@ -30,10 +30,11 @@ $(document).ready(function() {
 
 	$('.navbar-toggler').on('click', function() {
 		$(this).hide().siblings().hide().siblings('.navbar-collapse').show();
+		$('body').css( {overflow: 'hidden'} );
 		$('header .close-menu').show().on('click', function() {
+			$('body').css( {overflow: 'auto'} );
 			$(this).parents('nav').children().hide()
 				.siblings('*:not(.navbar-collapse)').show().siblings('.close-menu').hide();
-
 		});
 	});
 
