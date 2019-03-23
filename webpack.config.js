@@ -5,8 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isDevelopment = argv.mode === 'development';
-const isProduction = !isDevelopment;
+const isDev = argv.mode === 'development';
+const isProd = !isDev;
 const distPath = path.join(__dirname, '/dist');
 
 const config = {
@@ -30,13 +30,13 @@ const config = {
     }, {
       test: /\.(sa|sc|c)ss$/,
       use: [
-        isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+        isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
         'css-loader',
         {
           loader: 'postcss-loader',
           options: {
             plugins: [
-              isProduction ? require('cssnano') : () => {},
+              isProd ? require('cssnano') : () => {},
               require('autoprefixer')({
                 browsers: ['last 2 versions']
               })
@@ -72,6 +72,8 @@ const config = {
       },
     }]
   },
+  mode: isDev ? 'development' : 'production',
+  devtool: isDev ? 'eval-source-map' : 'none',
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -87,7 +89,7 @@ const config = {
       template: './src/index.html'
     })
   ],
-  optimization: isProduction ? {
+  optimization: isProd ? {
     minimizer: [
       new UglifyJsPlugin({
         sourceMap: true,

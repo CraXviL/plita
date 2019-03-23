@@ -1,8 +1,9 @@
 /* global YT */
-import 'jquery';
 import 'html5shiv';
+import 'jquery';
 import './delayEvent.jquery';
-import 'bootstrap';
+import 'bootstrap/js/dist/carousel.js';
+import 'bootstrap/js/dist/collapse.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/style.sass';
 
@@ -39,8 +40,10 @@ $(document).ready(function() {
 	});
 
 	$('button.btn-order').on('click', function() {
+		$('body').css( {overflow: 'hidden'} );
 		$('#block-order').show(500).css({display: 'flex'});
 		$('img.close-form').on('click', function() {
+			$('body').css( {overflow: 'auto'} );
 			$('#block-order').hide(500);
 		});
 	});
@@ -134,17 +137,17 @@ function onYouTubePlayer() {
 
 	(function() {
 		for (let elem in inputsList) {
-			$('input[name="' + elem + '"]').on('input', () => runValidate(elem));
+			$('input[name="' + elem + '"]').on('input', () => runValidate([elem]));
 		}
 	})();
 
 	function runValidate(inputName) {
-		inputName.forEach((name) => {
-			let pattern = inputsList[name].pattern;
-			let $target = $('input[name="' + name + '"]');
+		inputName.forEach((inputName) => {
+			let pattern = inputsList[inputName].pattern;
+			let $target = $('input[name="' + inputName + '"]');
 			let value = $target.val().trim();
-			inputsList[name].valid = pattern.test(value);
-			let error = !inputsList[name].valid;
+			inputsList[inputName].valid = pattern.test(value);
+			let error = !inputsList[inputName].valid;
 			showError($target, error);
 		});
 	}

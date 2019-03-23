@@ -272,7 +272,7 @@ footer
 
 #block-order
 	display: none
-	background-color: rgba(0,0,0, .8)
+	background-color: rgba(0,0,0, .9)
 	z-index: 5000
 
 form
@@ -299,7 +299,7 @@ form
 		background-color: transparent
 		border: none
 		border-bottom: $thin-border
-	input:focus
+	input:focus:not([type="submit"])
 		border-bottom: $thick-border
 		transition: all .1s ease
 	input.error
